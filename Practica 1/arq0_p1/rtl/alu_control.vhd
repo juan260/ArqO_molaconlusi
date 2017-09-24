@@ -21,6 +21,44 @@ end alu_control;
 
 architecture rtl of alu_control is
    
-begin
+	   -- Codigos de control:
+   constant ALU_OR   : t_aluControl := "0111";   
+   constant ALU_NOT  : t_aluControl := "0101";
+   constant ALU_XOR  : t_aluControl := "0110";
+   constant ALU_AND  : t_aluControl := "0100";
+   constant ALU_SUB  : t_aluControl := "0001";
+   constant ALU_ADD  : t_aluControl := "0000";
+   constant ALU_SLT  : t_aluControl := "1010";
+   constant ALU_S16  : t_aluControl := "1101";
 
+	-- Codigos de AluOp
+   constant AluOp_Add = "00";
+   constant AluOp_Sub = "01";
+   constant AluOp_Slt = "10";
+
+	
+begin
+	
+	if ALUOp = AlOp_Add then
+		ALUControl <= ALU_ADD;
+	elsif ALUOp = AlOp_Sub then
+		ALUControl <= ALU_SUB;
+	elsif ALUOp = AlOp_Slt then
+		ALUControl <= ALU_SLT;
+	else 
+		--RType
+		if Funct = "100100" then
+			AluControl <= ALU_AND;
+		elsif Funct = "100101" then
+			AluControl <= ALU_OR;
+		elsif Funct = "100000" then
+			AluControl <= ALU_ADD;
+		elsif Funct = "100110" then
+			AluControl <= ALU_XOR;
+		elsif Funct = "100010" then
+			AluControl <= ALU_SUB;
+		else 
+			AluControl <= ALU_SLT;
+		end if;
+	end if;
 end architecture;
