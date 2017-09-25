@@ -12,7 +12,7 @@ use ieee.std_logic_unsigned.all;
 entity alu_control is
    port (
       -- Entradas:
-      ALUOp  : in std_logic_vector (1 downto 0); -- Codigo control desde la unidad de control
+      ALUOp  : in std_logic_vector (2 downto 0); -- Codigo control desde la unidad de control
       Funct  : in std_logic_vector (5 downto 0); -- Campo "funct" de la instruccion
       -- Salida de control para la ALU:
       ALUControl : out std_logic_vector (3 downto 0) -- Define operacion a ejecutar por ALU
@@ -32,26 +32,29 @@ architecture rtl of alu_control is
    constant ALU_S16  : t_aluControl := "1101";
 
 	-- Codigos de AluOp
-   constant AluOp_Add = "00";
-   constant AluOp_Sub = "01";
-   constant AluOp_Slt = "10";
+   constant AluOp_Add = "000";
+   constant AluOp_Sub = "001";
+   constant AluOp_Slt = "010";
+   constant AluOp_S16 = "011";
 
 	
 begin
 	
 	if ALUOp = AlOp_Add then
 		ALUControl <= ALU_ADD;
-	elsif ALUOp = AlOp_Sub then
+	elsif ALUOp = AluOp_Sub then
 		ALUControl <= ALU_SUB;
-	elsif ALUOp = AlOp_Slt then
+	elsif ALUOp = AluOp_Slt then
 		ALUControl <= ALU_SLT;
+	elsif ALUOp = AluOp_S16 then
+		ALUControl <= ALU_S16;
 	else 
 		--RType
 		if Funct = "100100" then
 			AluControl <= ALU_AND;
 		elsif Funct = "100101" then
 			AluControl <= ALU_OR;
-		elsif Funct = "100000" then
+		elsif Funct = "100000" or Funct = "000000" then
 			AluControl <= ALU_ADD;
 		elsif Funct = "100110" then
 			AluControl <= ALU_XOR;

@@ -22,7 +22,7 @@ entity control_unit is
       MemRead  : out  std_logic; -- Leer la memoria
       -- Seniales para la ALU
       ALUSrc : out  std_logic;                     -- 0 = oper.B es registro, 1=es valor inm.
-      ALUOp  : out  std_logic_vector (1 downto 0); -- Tipo operacion para control de la ALU
+      ALUOp  : out  std_logic_vector (2 downto 0); -- Tipo operacion para control de la ALU
       -- Seniales para el GPR
       RegWrite : out  std_logic; -- 1=Escribir registro
       RegDst   : out  std_logic  -- 0=Reg. destino es rt, 1=rd
@@ -44,10 +44,11 @@ architecture rtl of control_unit is
    constant OP_SLTI   : t_opCode := "001010";
 
    -- Codigos de AluOp
-   constant AluOp_Add = "00";
-   constant AluOp_Sub = "01";
-   constant AluOp_Slt = "10";
-   constant AluOp_RType = "11";
+   constant AluOp_Add = "000";
+   constant AluOp_Sub = "001";
+   constant AluOp_Slt = "010";
+   constant AluOp_S16 = "011";
+   constant AluOp_RType = "111";
 
 begin
 
