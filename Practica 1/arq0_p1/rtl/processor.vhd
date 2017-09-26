@@ -27,28 +27,11 @@ end processor;
 
 architecture rtl of processor is 
 	--Componentes que necesitamos:
-	-- memory x2 (Data, Instruction)
 	-- control_unit
 	-- reg_bank
 	-- alu_control
 	-- alu
 	
-	-- MEMORIAS
-	component memory is
-		generic(
-		   INIT_FILENAME   : string := "instrucciones"; -- nombre fichero con datos iniciales
-		   MEM_SIZE        : integer := 1024            -- tamanio, en bytes
-		);
-		Port (
-		   Clk     : in std_logic ;                     -- Reloj
-		   Addr    : in std_logic_vector(31 downto 0);  -- Direccion de lectura o escritura
-		   RdEn    : in std_logic ;                     -- Habilitacion de lectura (si =1)
-		   WrEn    : in std_logic ;                     -- Habilitacion de escritura (si =1)
-		   DataIn  : in std_logic_vector(31 downto 0);  -- Dato a escribir
-		   DataOut : out std_logic_vector(31 downto 0)  -- Dato leido
-	   );
-	end component;
-
 	-- CONTROL UNIT
 	component control_unit is
 		port(
@@ -178,34 +161,6 @@ begin
 		ZFlag => zflag
 	);
 	
-	d_memory: memory
-	generic map (
-		INIT_FILENAME => INIT_FILENAME_DATA,
-      MEM_SIZE    => 1024	
-	)
-	port map(
-		Clk => Clk,
-		RdEn => memread, -- ¿O DRdEn?
-		WrEn => memwrite, -- ¿ O DWrEn?
-		DataIn  => rd2, -- ¿O DDataIn?
-		DataOut => DDataOut,
-		Addr => DAddr 
-	);
-	
-	i_memory: memory
-	generic map (
-		INIT_FILENAME => INIT_FILENAME_INST,
-      MEM_SIZE    => 1024	
-	)
-	port map(
-		Clk => Clk,
-		RdEn => '1',
-		WrEn => '0',
-		DataIn  => x"00000000", -- ??? si el we a 0, que mas da???
-		DataOut => i_dataout, -- ??? ¿O seria IDataIn?
-		Addr => pc -- ???
-	);
-	
 	ctrl_unit: control_unit
 	port map(
 		OpCode => opcode,
@@ -270,10 +225,10 @@ begin
 	-- ¿Y unir los ports de la entity con las signals y eso?
 	-- Tu crees que seria algo asi:
 	-- DAddr <= result;
-	-- DDataOut <= d_dataout;
+	-- DDataOut <= rd2;
 	-- DRdEn <= memread;
 	-- DWrEn <= memwrite;
-	-- DDataIn <= rd2; DDATAIN ES UN INPUT, FALLA
+	-- d_dataout <= DDataIn; 
 	-- IAddr <= pc;
 	-- IDataIn <= i_dataout;
 	
