@@ -1,1 +1,107 @@
+{/home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/control_unit.vhd} {0 {vcom -work work -2002 -explicit -stats=none {/home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/control_unit.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity control_unit
+-- Compiling architecture rtl of control_unit
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/control_unit.vhd(47): near "=": (vcom-1576) expecting ':'.
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/control_unit.vhd(48): near "=": (vcom-1576) expecting ':'.
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/control_unit.vhd(49): near "=": (vcom-1576) expecting ':'.
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/control_unit.vhd(50): near "=": (vcom-1576) expecting ':'.
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/control_unit.vhd(51): near "=": (vcom-1576) expecting ':'.
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/control_unit.vhd(56): Illegal concurrent statement.
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/control_unit.vhd(64): Illegal concurrent statement.
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/control_unit.vhd(71): Illegal concurrent statement.
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/control_unit.vhd(78): Illegal concurrent statement.
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/control_unit.vhd(85): (vcom-1136) Unknown identifier "Op_Code".
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/control_unit.vhd(85): ** Error: (vcom-1590) Bad expression in right operand of infix expression 'or'.
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/control_unit.vhd(85): Type error resolving infix expression "or" as type std.STANDARD.BOOLEAN.
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/control_unit.vhd(85): Illegal concurrent statement.
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/control_unit.vhd(93): Illegal concurrent statement.
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/control_unit.vhd(100): Illegal concurrent statement.
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/control_unit.vhd(107): Illegal concurrent statement.
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/control_unit.vhd(114): Illegal concurrent statement.
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/control_unit.vhd(115): (vcom-1136) Unknown identifier "AluOp_RType".
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/control_unit.vhd(117): (vcom-1136) Unknown identifier "AluOp_Slt".
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/control_unit.vhd(119): (vcom-1136) Unknown identifier "AluOp_Sub".
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/control_unit.vhd(121): (vcom-1136) Unknown identifier "AluOp_Add".
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/control_unit.vhd(124): VHDL Compiler exiting
 
+} {10.0 32.0} {}} {/home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/sim/processor_tb.vhd} {1 {vcom -work work -2002 -explicit -stats=none {/home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/sim/processor_tb.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity processor_tb
+-- Compiling architecture tb of processor_tb
+
+} {} {}} {/home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/sim/memory.vhd} {1 {vcom -work work -2002 -explicit -stats=none {/home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/sim/memory.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package std_logic_textio
+-- Compiling entity memory
+-- Compiling architecture Behavioral of memory
+
+} {} {}} {/home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/reg_bank.vhd} {1 {vcom -work work -2002 -explicit -stats=none {/home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/reg_bank.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity reg_bank
+-- Compiling architecture rtl of reg_bank
+
+} {} {}} {/home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/alu_control.vhd} {0 {vcom -work work -2002 -explicit -stats=none {/home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/alu_control.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity alu_control
+-- Compiling architecture rtl of alu_control
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/alu_control.vhd(25): (vcom-1136) Unknown identifier "t_aluControl".
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/alu_control.vhd(26): (vcom-1136) Unknown identifier "t_aluControl".
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/alu_control.vhd(27): (vcom-1136) Unknown identifier "t_aluControl".
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/alu_control.vhd(28): (vcom-1136) Unknown identifier "t_aluControl".
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/alu_control.vhd(29): (vcom-1136) Unknown identifier "t_aluControl".
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/alu_control.vhd(30): (vcom-1136) Unknown identifier "t_aluControl".
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/alu_control.vhd(31): (vcom-1136) Unknown identifier "t_aluControl".
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/alu_control.vhd(32): (vcom-1136) Unknown identifier "t_aluControl".
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/alu_control.vhd(35): near "=": (vcom-1576) expecting ':'.
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/alu_control.vhd(36): near "=": (vcom-1576) expecting ':'.
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/alu_control.vhd(37): near "=": (vcom-1576) expecting ':'.
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/alu_control.vhd(38): near "=": (vcom-1576) expecting ':'.
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/alu_control.vhd(43): (vcom-1136) Unknown identifier "AlOp_Add".
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/alu_control.vhd(43): Type error resolving infix expression "=" as type std.STANDARD.BOOLEAN.
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/alu_control.vhd(43): Illegal concurrent statement.
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/alu_control.vhd(45): (vcom-1136) Unknown identifier "AluOp_Sub".
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/alu_control.vhd(45): Type error resolving infix expression "=" as type std.STANDARD.BOOLEAN.
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/alu_control.vhd(47): (vcom-1136) Unknown identifier "AluOp_Slt".
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/alu_control.vhd(47): Type error resolving infix expression "=" as type std.STANDARD.BOOLEAN.
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/alu_control.vhd(49): (vcom-1136) Unknown identifier "AluOp_S16".
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/alu_control.vhd(49): Type error resolving infix expression "=" as type std.STANDARD.BOOLEAN.
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/alu_control.vhd(53): Illegal concurrent statement.
+** Error: /home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/alu_control.vhd(67): VHDL Compiler exiting
+
+} {10.0 33.0} {}} {/home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/alu.vhd} {1 {vcom -work work -2002 -explicit -stats=none {/home/lucia/Documentos/tercero/pr/arqo/Practica 1/arq0_p1/rtl/alu.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5c Compiler 2017.01 Jan 23 2017
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity alu
+-- Compiling architecture rtl of alu
+
+} {} {}}
