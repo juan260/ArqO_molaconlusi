@@ -36,7 +36,7 @@ architecture rtl of processor is
 	component control_unit is
 		port(
 			-- Entrada = codigo de operacion en la instruccion:
-			OpCode  : in  std_logic_vector (5 downto 0);
+			Instr  : in  std_logic_vector (31 downto 0);
 			-- Seniales para el PC
 			Branch : out  std_logic; -- 1 = Ejecutandose instruccion branch
 			Jump : out std_logic; -- 1 = Ejecutandose un jump
@@ -102,7 +102,7 @@ architecture rtl of processor is
 	
 	-- Las que salen de la inst memory y no van al banco de regs
 	signal i_dataout: std_logic_vector(31 downto 0);
-	signal opcode: std_logic_vector (5 downto 0);
+	signal opcode: std_logic_vector (31 downto 0);
 	signal imm: std_logic_vector (15 downto 0);
 	signal jumpoffset: std_logic_vector (27 downto 0);
 		
@@ -164,7 +164,7 @@ begin
 	
 	miControl_unit: control_unit
 	port map(
-		OpCode => opcode,
+		Instr => opcode,
 		Branch => branch,
 		Jump => jump,
 		MemToReg => memtoreg,
@@ -186,7 +186,7 @@ begin
 	-- Ahora empezarian las asignaciones concurrentes
 	
 	-- Separacion instruccion
-	opcode <= i_dataout (31 downto 26);
+	opcode <= i_dataout (31 downto 0);
 	a1 <= i_dataout (25 downto 21);
 	a2 <= i_dataout (20 downto 16);
 	rd <= i_dataout (15 downto 11);
@@ -202,8 +202,8 @@ begin
 	wd3 <= result when memtoreg = '0' else d_dataout;
 	
 	-- Empezamos con el calculo del proximo PC
-	pcmas4 <= pc + 4,
-	pcbranch <= pcmas4 + (immext & "00"); -- pc+4 + shiftleft2(immext)
+	pcmas4 <= pc + 4;
+	pcbranch <= pcmas4 + (immext(29 downto 0) & "00"); -- pc+4 + shiftleft2(immext)
 	jumpoffset <= i_dataout(25 downto 0) & "00";
 	pcjump <= pcmas4(31 downto 28) & jumpoffset(27 downto 0);
 	-- Una vez tenemos pc+4, pcbranch i pcjump, hacemos muxes.
@@ -212,26 +212,22 @@ begin
 	pcnext <= pcjump when jump = '1' else
 				 pc_aftermux;
 				 
-	process (Clk)
+	process (Clk, Reset)
 		begin
-		if rising_edge(Clk) then
-			if Reset = '0' then pc <= (others => '0'); 
-			else pc <= pcnext;
-			end if;
+		if Reset = '1' or falling_edge(Reset) then pc <= x"fffffffc"; 
+		elsif rising_edge(Clk) then
+		  pc <= pcnext;
 		end if;
 	end process;
 	
-	
-	
-	-- ¿Y unir los ports de la entity con las signals y eso?
-	-- Tu crees que seria algo asi:
-	-- DAddr <= result;
-	-- DDataOut <= rd2;
-	-- DRdEn <= memread;
-	-- DWrEn <= memwrite;
-	-- d_dataout <= DDataIn; 
-	-- IAddr <= pc;
-	-- IDataIn <= i_dataout;
+
+	DAddr <= result;
+	DDataOut <= rd2;
+	DRdEn <= memread;
+	DWrEn <= memwrite;
+	d_dataout <= DDataIn; 
+	IAddr <= pc;
+	i_dataout <= IDataIn;
 	
 		
 end architecture;

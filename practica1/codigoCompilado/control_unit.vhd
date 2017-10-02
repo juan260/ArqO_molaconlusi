@@ -1,7 +1,7 @@
 --------------------------------------------------------------------------------
 -- Unidad de control principal del micro. Arq0 2017
 --
--- (INCLUIR AQUI LA INFORMACION SOBRE LOS AUTORES)
+-- Lusia y Juana
 --
 --------------------------------------------------------------------------------
 
@@ -12,7 +12,7 @@ use ieee.std_logic_unsigned.all;
 entity control_unit is
    port (
       -- Entrada = codigo de operacion en la instruccion:
-      OpCode  : in  std_logic_vector (5 downto 0);
+      Instr  : in  std_logic_vector (31 downto 0);
       -- Seniales para el PC
       Branch : out  std_logic; -- 1 = Ejecutandose instruccion branch
       Jump : out std_logic; -- 1 = Ejecutandose un jump
@@ -50,9 +50,14 @@ architecture rtl of control_unit is
    constant AluOp_Slt : t_aluControl := "010";
    constant AluOp_S16 : t_aluControl := "011";
    constant AluOp_RType : t_aluControl := "111";
+   
+   signal OpCode: std_logic_vector(5 downto 0);
 
 begin
-   process(OpCode)
+  
+  OpCode <= Instr(5 downto 0);
+  
+   process(Instr)
    begin
 
 	--Branch
@@ -85,7 +90,7 @@ begin
 	end if;
 
 	--AluSrc
-	if OpCode = OP_RTYPE or OpCode = OP_BEQ  then
+	if OpCode = OP_RTYPE or OpCode = OP_BEQ then
 		AluSrc <= '0';
 	else
 		AluSrc <= '1';
@@ -93,7 +98,7 @@ begin
 
 	--RegWrite
 	if OpCode = OP_SW or OpCode = OP_BEQ or	
-	   OpCode = OP_JUMP then
+	   OpCode = OP_JUMP or Instr = "00000000000000000000000000000000" then
 		RegWrite <= '0'; 
 	else 
 		RegWrite <= '1';
@@ -120,6 +125,8 @@ begin
 		AluOp <= AluOp_Slt;
 	elsif OpCode = OP_BEQ then
 		AluOp <= AluOp_Sub;
+	elsif OpCode = Op_LUI then
+	  AluOp <= AluOp_S16;
 	else 
 		AluOp <= AluOp_Add;
 	end if;
