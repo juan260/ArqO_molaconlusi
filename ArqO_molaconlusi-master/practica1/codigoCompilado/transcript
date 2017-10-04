@@ -1,0 +1,9 @@
+# Loading project p1
+# Compile of processor_tb.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of alu_control.vhd failed with 23 errors.
+# Compile of control_unit.vhd failed with 23 errors.
+# Compile of processor.vhd failed with 119 errors.
+# Compile of reg_bank.vhd was successful.
+# Compile of memory.vhd was successful.
+# 7 compiles, 3 failed with 165 errors.
