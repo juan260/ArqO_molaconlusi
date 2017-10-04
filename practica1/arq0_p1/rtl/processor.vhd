@@ -171,13 +171,14 @@ begin
 		ALUSrc => alusrc,
 		ALUOp => aluop,
 		RegWrite => we3,
-		RegDst => regdst
+		RegDst => regdst,
+		MemWrite => memwrite
 	);
 	
 	alu_control: alu_control
 	port map(
 		ALUOp => aluop,
-		Funct => imm(5 downto),
+		Funct => imm(5 downto 0),
 		ALUControl => control
 	);
 	
@@ -211,12 +212,11 @@ begin
 	pcnext <= pcjump when jump = '1' else
 				 pc_aftermux;
 				 
-	process (Clk)
+	process (Clk, Reset)
 		begin
+		if Reset = '0' then pc <= (others => '0'); --No seria reset = '1'?
 		if rising_edge(Clk) then
-			if Reset = '0' then pc <= (others => '0'); 
-			else pc <= pcnext;
-			end if;
+		    pc <= pcnext;
 		end if;
 	end process;
 	
@@ -224,13 +224,13 @@ begin
 	
 	-- ¿Y unir los ports de la entity con las signals y eso?
 	-- Tu crees que seria algo asi:
-	-- DAddr <= result;
-	-- DDataOut <= rd2;
-	-- DRdEn <= memread;
-	-- DWrEn <= memwrite;
-	-- d_dataout <= DDataIn; 
-	-- IAddr <= pc;
-	-- IDataIn <= i_dataout;
+	DAddr <= result;
+	DDataOut <= rd2;
+	DRdEn <= memread;
+	DWrEn <= memwrite;
+	d_dataout <= DDataIn; 
+	IAddr <= pc;
+	i_dataout <= IDataIn;
 	
 		
 end architecture;

@@ -98,7 +98,8 @@ architecture rtl of processor is
 	signal pcbranch: std_logic_vector (31 downto 0);
 	signal pc_aftermux: std_logic_vector (31 downto 0);	
 	signal pcjump: std_logic_vector (31 downto 0);
-	signal pcnext: std_logic_vector (31 downto 0);	
+	signal pcnext: std_logic_vector (31 downto 0);
+	--singal pcaux: std	
 	
 	-- Las que salen de la inst memory y no van al banco de regs
 	signal i_dataout: std_logic_vector(31 downto 0);
@@ -169,6 +170,7 @@ begin
 		Jump => jump,
 		MemToReg => memtoreg,
 		MemRead => memread,
+		MemWrite => memwrite,
 		ALUSrc => alusrc,
 		ALUOp => aluop,
 		RegWrite => we3,
@@ -185,6 +187,9 @@ begin
 	
 	-- Ahora empezarian las asignaciones concurrentes
 	
+	
+		 
+
 	-- Separacion instruccion
 	opcode <= i_dataout (31 downto 0);
 	a1 <= i_dataout (25 downto 21);
@@ -211,23 +216,32 @@ begin
 						pcmas4;
 	pcnext <= pcjump when jump = '1' else
 				 pc_aftermux;
-				 
+	
+	--Actualizacion del pc
 	process (Clk, Reset)
 		begin
-		if Reset = '1' or falling_edge(Reset) then pc <= x"fffffffc"; 
+		--if Reset = '1' or falling_edge(Reset) then pc <= x"fffffffc"; 
+		if Reset = '1' then pc <= (others => '0');	
 		elsif rising_edge(Clk) then
-		  pc <= pcnext;
+			
+		  	pc <= pcnext;
 		end if;
 	end process;
 	
 
+--Fetch
+	--process (Clk)
+	--	begin
+	--	if rising_edge(Clk) then i_dataout <= IDataIn; end if;
+	--	end process;
+	
+	i_dataout <= IDataIn;
 	DAddr <= result;
 	DDataOut <= rd2;
 	DRdEn <= memread;
 	DWrEn <= memwrite;
 	d_dataout <= DDataIn; 
 	IAddr <= pc;
-	i_dataout <= IDataIn;
 	
 		
 end architecture;

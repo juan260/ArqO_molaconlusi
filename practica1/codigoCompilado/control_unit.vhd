@@ -55,7 +55,7 @@ architecture rtl of control_unit is
 
 begin
   
-  OpCode <= Instr(5 downto 0);
+  OpCode <= Instr(31 downto 26);
   
    process(Instr)
    begin
