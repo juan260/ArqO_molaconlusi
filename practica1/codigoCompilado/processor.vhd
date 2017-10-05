@@ -137,6 +137,32 @@ architecture rtl of processor is
 	signal memwrite: std_logic;
 	signal alusrc: std_logic;
 	
+	-- Señales para los registros del multiciclo
+	signal ifidpcmas4 : std_logic_vector(31 downto 0);
+	signal ifidInstr : std_logic_vector(31 downto 0);
+	
+	signal idexwb : std_logic_vector(1 downto 0); -- 1 memtoreg 0 regwrite
+	signal idexm : std_logic_vector(3 downto 0); -- 3 jam 2 branch 1 memread 0 memwrite
+	signal idexex : std_logic_vector(4 downto 0); -- 4 downto 2 aluop 1 regdst 0 alusrc
+	signal idexpcmas4 : std_logic_vector(31 downto 0);
+	signal idexrd1 : std_logic_vector(31 downto 0);
+	signal idexrd2 : std_logic_vector(31 downto 0);
+	signal ideximm : std_logic_vector(31 downto 0);
+	signal idex2016 : std_logic_vector(4 downto 0);
+	signal idex1511 : std_logic_vector(4 downto 0);
+	
+	signal exmemwb : std_logic_vector(1 downto 0); -- 1 memtoreg 0 regwrite
+	signal exmemm : std_logic_vector(2 downto 0); -- 2 branch 1 memread 0 memwrite
+	signal exmempcbranch : std_logic_vector(31 downto 0);
+	signal exmemz : std_logic;
+	signal exmemresult : std_logic_vector(31 downto 0);
+	signal exmemrd2 : std_logic_vector(31 downto 0);
+	signal exmema3 : std_logic_vector(4 downto 0);
+	
+	signal memwbwb : std_logic_vector(1 downto 0); -- 1 memtoreg 0 regwrite
+	signal memwbd_dataout : std_logic_vector(31 downto 0);
+	signal memwba3 : std_logic_vector(4 downto 0);
+	
 begin   
 	
 	-- Port maps   PUERTO_COMPONENTE => TU_SIGNAL,   LA ULTIMA SIN ','
@@ -217,14 +243,71 @@ begin
 	pcnext <= pcjump when jump = '1' else
 				 pc_aftermux;
 	
+	process(Clk, Reset)
+	  begin
+	    if Reset = '1' then <= (others => '0');
+	    elsif rising_edge(Clk) then
+	    
+	    end if;
+	  end process;
+	    
 	--Actualizacion del pc
 	process (Clk, Reset)
 		begin
 		--if Reset = '1' or falling_edge(Reset) then pc <= x"fffffffc"; 
-		if Reset = '1' then pc <= (others => '0');	
+		if Reset = '1' then 
+		  pc <= (others => '0');	
+		  ifidpcmas4 <= (others => '0');
+	 ifidInstr <= (others => '0');	
+	
+	 idexwb <= (others => '0');	
+	 idexm <= (others => '0');
+	idexex  <= (others => '0');
+	idexpcmas4  <= (others => '0');
+	idexrd1  <= (others => '0');
+	idexrd2  <= (others => '0');
+	ideximm <= (others => '0');
+	idex2016  <= (others => '0');
+	idex1511  <= (others => '0');
+	
+	exmemwb <= (others => '0');
+	exmemm  <= (others => '0');
+	exmempcbranch <= (others => '0');
+	exmemz <= (others => '0');
+	exmemresult <= (others => '0');
+	exmemrd2 <= (others => '0');
+	exmema3  <= (others => '0');
+	
+	memwbwb <= (others => '0');
+	memwbd_dataout <= (others => '0');
+	memwba3 <= (others => '0');
+	
 		elsif rising_edge(Clk) then
-			
+			 
 		  	pc <= pcnext;
+		  	 ifidInstr <= Instr;
+	
+	   idexwb <= ;	
+	   idexm <= ;
+	   idexex  <= ;
+	   idexpcmas4  <= ;
+	idexrd1  <= ;
+	idexrd2  <= ;
+	ideximm <= ;
+	idex2016  <= ;
+	idex1511  <= ;
+	
+	exmemwb <= ;
+	exmemm  <= ;
+	exmempcbranch <= ;
+	exmemz <= ;
+	exmemresult <= ;
+	exmemrd2 <= ;
+	exmema3  <= ;
+	
+	memwbwb <= ;
+	memwbd_dataout <= ;
+	memwba3 <= ;  
 		end if;
 	end process;
 	
