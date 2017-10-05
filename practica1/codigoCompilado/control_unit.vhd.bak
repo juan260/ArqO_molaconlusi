@@ -25,7 +25,7 @@ entity control_unit is
       ALUOp  : out  std_logic_vector (2 downto 0); -- Tipo operacion para control de la ALU
       -- Seniales para el GPR
       RegWrite : out  std_logic; -- 1=Escribir registro
-      RegDst   : out  std_logic  -- 0=Reg. destino es rt, 1=rd
+      RegDst   : out  std_logic  -- 0=Reg. destino es rt, 1=rd      
    );
 end control_unit;
 
@@ -55,81 +55,47 @@ architecture rtl of control_unit is
 
 begin
   
-  OpCode <= Instr(5 downto 0);
+  OpCode <= Instr(31 downto 26);
   
-   process(Instr)
-   begin
-
+  
 	--Branch
-	if OpCode = OP_BEQ then
-		Branch <= '1';
-	else 
-		Branch <= '0';
-	end if;
-
+	Branch <= '1' when OpCode = OP_BEQ  else
+	          '0';
 		
 	--MemToReg
-	if OpCode = OP_LW then
-		MemToReg <= '1';
-	else
-		MemToReg <= '0';
-	end if;
+	MemToReg <= '1' when OpCode = OP_LW else
+	            '0';
 
 	--MemWrite
-	if OpCode = OP_SW then
-		MemWrite <= '1';
-	else 
-		MemWrite <= '0';
-	end if;
+	MemWrite <= '1' when OpCode = OP_SW else
+	            '0';
 
 	--MemRead
-	if OpCode = OP_LW then
-		MemRead <= '1';
-	else
-		MemRead <= '0';
-	end if;
+	MemRead <= '1' when OpCode = OP_LW else
+	           '0';
 
 	--AluSrc
-	if OpCode = OP_RTYPE or OpCode = OP_BEQ then
-		AluSrc <= '0';
-	else
-		AluSrc <= '1';
-	end if;
+	AluSrc <= '0' when OpCode = OP_RTYPE or OpCode = OP_BEQ else
+	          '1';
 
 	--RegWrite
-	if OpCode = OP_SW or OpCode = OP_BEQ or	
-	   OpCode = OP_JUMP or Instr = "00000000000000000000000000000000" then
-		RegWrite <= '0'; 
-	else 
-		RegWrite <= '1';
-	end if;
+	RegWrite <= '0' when  OpCode = OP_SW or OpCode = OP_BEQ or	
+	   OpCode = OP_JUMP or Instr = "00000000000000000000000000000000" else
+	            '1';
 
 	--RegDst
-	if OpCode = OP_RTYPE or OpCode = OP_LW then
-		RegDst <= '1';
-	else
-		RegDst <= '0';
-	end if;
+	RegDst <= '1' else OpCode = OP_RTYPE else 
+	          '0';
 
 	--Jump
-	if OpCode = OP_JUMP then
-		Jump <= '1';
-	else 
-		Jump <= '0';
-	end if;
+	Jump <= '1' when OpCode = OP_JUMP else
+          	'0';
 	
 	--AluOp
-	if OpCode = OP_RTYPE then
-		AluOp <= AluOp_RType;
-	elsif OpCode = OP_SLTI then
-		AluOp <= AluOp_Slt;
-	elsif OpCode = OP_BEQ then
-		AluOp <= AluOp_Sub;
-	elsif OpCode = Op_LUI then
-	  AluOp <= AluOp_S16;
-	else 
-		AluOp <= AluOp_Add;
-	end if;
-
-    end process;
+	AluOp <= AluOp_RType when OpCode = OP_RTYPE else
+	         AluOp_Slt when OpCode = OP_SLTI else
+	         AluOp_Sub when OpCode = OP_BEQ else
+	         AluOp_S16 when OpCode = Op_LUI else
+           AluOp_Add;
+	
 end architecture;
