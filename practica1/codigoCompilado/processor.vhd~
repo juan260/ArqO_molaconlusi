@@ -308,7 +308,7 @@ begin
 					idex1511;
 	
 			memwbwb <= exmemwb;
-			memwbd_dataout <= DDataIn;
+			memwbd_dataout <= ;
 			memwba3 <= exmema3;  
 		end if;
 	end process;
