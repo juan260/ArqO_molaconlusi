@@ -161,6 +161,7 @@ architecture rtl of processor is
 	
 	signal memwbwb : std_logic_vector(1 downto 0); -- 1 memtoreg 0 regwrite
 	signal memwbd_dataout : std_logic_vector(31 downto 0);
+	signal memwbresult : std_logic_vetor(31 downto 0);
 	signal memwba3 : std_logic_vector(4 downto 0);
 	
 begin   
@@ -175,14 +176,14 @@ begin
 		A2 => a2,
 		A3 => a3,
 		Wd3 => wd3,
-		We3 => we3,
+		We3 => memwbwb(0),
 		Rd1 => rd1,
 		Rd2 => rd2
 	);
 	
 	miAlu: alu
 	port map(
-		OpA => rd1,
+		OpA => idexrd1,
 		Opb => opb,
 		Control => control,
 		Result => result,
@@ -199,14 +200,14 @@ begin
 		MemWrite => memwrite,
 		ALUSrc => alusrc,
 		ALUOp => aluop,
-		RegWrite => we3,
+		RegWrite => regwrite,
 		RegDst => regdst
 	);
 	
 	miAlu_control: alu_control
 	port map(
-		ALUOp => aluop,
-		Funct => imm(5 downto 0),
+		ALUOp => idexex(4 downto 2),
+		Funct => ideximm(5 downto 0),
 		ALUControl => control
 	);
 	
@@ -223,25 +224,29 @@ begin
 	rd <= i_dataout (15 downto 11);
 	imm <= i_dataout (15 downto 0);
 	-- Mux para el write register
-	a3 <= a2 when regdst = '0' else rd;
+	a3 <= memwba3;
 	-- Mux para OpB de la ALU
-	opb <= rd2 when alusrc = '0' else immext;
+	opb <= idexrd2 when idexex(0) = '0' else ideximm;
 	-- Extendemos en signo la signal imm
 	immext (15 downto 0) <= imm (15 downto 0);
 	immext (31 downto 16) <= (others => imm(15));
 	-- Mux de la salida del data memory
-	wd3 <= result when memtoreg = '0' else d_dataout;
+	wd3 <= memwbresult when memwbwb(1) = '0' else memwbd_dataout;
 	
 	-- Empezamos con el calculo del proximo PC
 	pcmas4 <= pc + 4;
-	pcbranch <= pcmas4 + (immext(29 downto 0) & "00"); -- pc+4 + shiftleft2(immext)
+	pcbranch <= idexpcmas4 + ((ideximm(29 downto 0) & "00")); -- pc+4 + shiftleft2(immext)
 	jumpoffset <= i_dataout(25 downto 0) & "00";
-	pcjump <= pcmas4(31 downto 28) & jumpoffset(27 downto 0);
 	-- Una vez tenemos pc+4, pcbranch i pcjump, hacemos muxes.
-	pc_aftermux <= pcbranch when branch = '1' and zflag = '1' else
+	pc_aftermux <= exmempcbranch when exmemm(2) = '1' and exmemz = '1' else
 						pcmas4;
+						
+						--Faltan:
 	pcnext <= pcjump when jump = '1' else
 				 pc_aftermux;
+				 
+  
+	pcjump <= pcmas4(31 downto 28) & jumpoffset(27 downto 0);
 	
 	process(Clk, Reset)
 	  begin
@@ -280,6 +285,7 @@ begin
 	
 			memwbwb <= (others => '0');
 			memwbd_dataout <= (others => '0');
+			memwbresult <= (others => '0');
 			memwba3 <= (others => '0');
 	
 		elsif rising_edge(Clk) then
@@ -304,11 +310,12 @@ begin
 			exmemz <= zflag;
 			exmemresult <= result;
 			exmemrd2 <= idexrd2;
-			exmema3  <= idex2016 when RegDst = '0' else
+			exmema3  <= idex2016 when idexex(1) = '0' else
 					idex1511;
 	
 			memwbwb <= exmemwb;
 			memwbd_dataout <= DDataIn;
+			memwbresult <= idexresult;
 			memwba3 <= exmema3;  
 		end if;
 	end process;
@@ -322,6 +329,8 @@ begin
 	DWrEn <= memwrite;
 	d_dataout <= DDataIn; 
 	IAddr <= pc;
+	
+
 	
 		
 end architecture;

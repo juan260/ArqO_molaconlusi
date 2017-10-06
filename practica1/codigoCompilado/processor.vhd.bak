@@ -98,7 +98,8 @@ architecture rtl of processor is
 	signal pcbranch: std_logic_vector (31 downto 0);
 	signal pc_aftermux: std_logic_vector (31 downto 0);	
 	signal pcjump: std_logic_vector (31 downto 0);
-	signal pcnext: std_logic_vector (31 downto 0);	
+	signal pcnext: std_logic_vector (31 downto 0);
+	--singal pcaux: std	
 	
 	-- Las que salen de la inst memory y no van al banco de regs
 	signal i_dataout: std_logic_vector(31 downto 0);
@@ -136,6 +137,33 @@ architecture rtl of processor is
 	signal memwrite: std_logic;
 	signal alusrc: std_logic;
 	
+	-- Señales para los registros del multiciclo
+	signal ifidpcmas4 : std_logic_vector(31 downto 0);
+	signal ifidInstr : std_logic_vector(31 downto 0);
+	
+	signal idexwb : std_logic_vector(1 downto 0); -- 1 memtoreg 0 regwrite
+	signal idexm : std_logic_vector(3 downto 0); -- 3 jam 2 branch 1 memread 0 memwrite
+	signal idexex : std_logic_vector(4 downto 0); -- 4 downto 2 aluop 1 regdst 0 alusrc
+	signal idexpcmas4 : std_logic_vector(31 downto 0);
+	signal idexrd1 : std_logic_vector(31 downto 0);
+	signal idexrd2 : std_logic_vector(31 downto 0);
+	signal ideximm : std_logic_vector(31 downto 0);
+	signal idex2016 : std_logic_vector(4 downto 0);
+	signal idex1511 : std_logic_vector(4 downto 0);
+	
+	signal exmemwb : std_logic_vector(1 downto 0); -- 1 memtoreg 0 regwrite
+	signal exmemm : std_logic_vector(2 downto 0); -- 2 branch 1 memread 0 memwrite
+	signal exmempcbranch : std_logic_vector(31 downto 0);
+	signal exmemz : std_logic;
+	signal exmemresult : std_logic_vector(31 downto 0);
+	signal exmemrd2 : std_logic_vector(31 downto 0);
+	signal exmema3 : std_logic_vector(4 downto 0);
+	
+	signal memwbwb : std_logic_vector(1 downto 0); -- 1 memtoreg 0 regwrite
+	signal memwbd_dataout : std_logic_vector(31 downto 0);
+	signal memwbresult : std_logic_vetor(31 downto 0);
+	signal memwba3 : std_logic_vector(4 downto 0);
+	
 begin   
 	
 	-- Port maps   PUERTO_COMPONENTE => TU_SIGNAL,   LA ULTIMA SIN ','
@@ -148,14 +176,14 @@ begin
 		A2 => a2,
 		A3 => a3,
 		Wd3 => wd3,
-		We3 => we3,
+		We3 => memwbwb(0),
 		Rd1 => rd1,
 		Rd2 => rd2
 	);
 	
 	miAlu: alu
 	port map(
-		OpA => rd1,
+		OpA => idexrd1,
 		Opb => opb,
 		Control => control,
 		Result => result,
@@ -169,16 +197,17 @@ begin
 		Jump => jump,
 		MemToReg => memtoreg,
 		MemRead => memread,
+		MemWrite => memwrite,
 		ALUSrc => alusrc,
 		ALUOp => aluop,
-		RegWrite => we3,
+		RegWrite => regwrite,
 		RegDst => regdst
 	);
 	
 	miAlu_control: alu_control
 	port map(
-		ALUOp => aluop,
-		Funct => imm(5 downto 0),
+		ALUOp => idexex(4 downto 2),
+		Funct => ideximm(5 downto 0),
 		ALUControl => control
 	);
 	
@@ -195,50 +224,109 @@ begin
 	rd <= i_dataout (15 downto 11);
 	imm <= i_dataout (15 downto 0);
 	-- Mux para el write register
-	a3 <= a2 when regdst = '0' else rd;
+	a3 <= memwba3;
 	-- Mux para OpB de la ALU
-	opb <= rd2 when alusrc = '0' else immext;
+	opb <= idexrd2 when idexex(0) = '0' else ideximm;
 	-- Extendemos en signo la signal imm
 	immext (15 downto 0) <= imm (15 downto 0);
 	immext (31 downto 16) <= (others => imm(15));
 	-- Mux de la salida del data memory
-	wd3 <= result when memtoreg = '0' else d_dataout;
+	wd3 <= memwbresult when memwbwb(1) = '0' else memwbd_dataout;
 	
 	-- Empezamos con el calculo del proximo PC
 	pcmas4 <= pc + 4;
-	pcbranch <= pcmas4 + (immext(29 downto 0) & "00"); -- pc+4 + shiftleft2(immext)
+	pcbranch <= idexpcmas4 + ((ideximm(29 downto 0) & "00")); -- pc+4 + shiftleft2(immext)
 	jumpoffset <= i_dataout(25 downto 0) & "00";
 	pcjump <= pcmas4(31 downto 28) & jumpoffset(27 downto 0);
 	-- Una vez tenemos pc+4, pcbranch i pcjump, hacemos muxes.
-	pc_aftermux <= pcbranch when branch = '1' and zflag = '1' else
+	pc_aftermux <= exmempcbranch when exmemm(2) = '1' and exmemz = '1' else
 						pcmas4;
 	pcnext <= pcjump when jump = '1' else
 				 pc_aftermux;
 	
+	process(Clk, Reset)
+	  begin
+	    if Reset = '1' then <= (others => '0');
+	    elsif rising_edge(Clk) then
+	    
+	    end if;
+	  end process;
+	    
 	--Actualizacion del pc
 	process (Clk, Reset)
 		begin
 		--if Reset = '1' or falling_edge(Reset) then pc <= x"fffffffc"; 
-		if Reset = '1' then pc <= (others => '0');	
+		if Reset = '1' then 
+			pc <= (others => '0');	
+			ifidpcmas4 <= (others => '0');
+			ifidInstr <= (others => '0');	
+	
+			idexwb <= (others => '0');	
+			idexm <= (others => '0');
+			idexex  <= (others => '0');
+			idexpcmas4  <= (others => '0');
+			idexrd1  <= (others => '0');
+			idexrd2  <= (others => '0');
+			ideximm <= (others => '0');
+			idex2016  <= (others => '0');
+			idex1511  <= (others => '0');
+	
+			exmemwb <= (others => '0');
+			exmemm  <= (others => '0');
+			exmempcbranch <= (others => '0');
+			exmemz <= (others => '0');
+			exmemresult <= (others => '0');
+			exmemrd2 <= (others => '0');
+			exmema3  <= (others => '0');
+	
+			memwbwb <= (others => '0');
+			memwbd_dataout <= (others => '0');
+			memwbresult <= (others => '0');
+			memwba3 <= (others => '0');
+	
 		elsif rising_edge(Clk) then
-			
-		  	pc <= pcnext;
+				 
+			pc <= pcnext;
+		  	ifidInstr <= IDataIn;
+			ifidpcmas4 <= pc + 4;
+
+			idexwb <= (memtoreg & regwrite);	
+			idexm <= (jump & branch & memread & memwrite);
+			idexex  <= (aluop & regdst & alusrc);
+			idexpcmas4  <= ifidpcmas4;
+			idexrd1  <= rd1;
+			idexrd2  <= rd2;
+			ideximm <= immext;
+			idex2016  <= i_dataout(20 downto 16);
+			idex1511  <= i_dataout(15 downto 11);
+	
+			exmemwb <= idexwb;
+			exmemm  <= idexm;
+			exmempcbranch <= pcbranch;
+			exmemz <= zflag;
+			exmemresult <= result;
+			exmemrd2 <= idexrd2;
+			exmema3  <= idex2016 when idexex(1) = '0' else
+					idex1511;
+	
+			memwbwb <= exmemwb;
+			memwbd_dataout <= DDataIn;
+			memwbresult <= idexresult;
+			memwba3 <= exmema3;  
 		end if;
 	end process;
 	
 
---Fetch
-	--process (Clk)
---		begin
---		if rising_edge(Clk) then i_dataout <= IDataIn; end if;
---		end process;
-	i_dataout <= IDataIn;
+	
+	i_dataout <= ifidInstr;
 	DAddr <= result;
 	DDataOut <= rd2;
 	DRdEn <= memread;
 	DWrEn <= memwrite;
 	d_dataout <= DDataIn; 
 	IAddr <= pc;
+	
+
 	
 		
 end architecture;
