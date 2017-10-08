@@ -152,7 +152,7 @@ architecture rtl of processor is
 	signal idex1511 : std_logic_vector(4 downto 0);
 	
 	signal exmemwb : std_logic_vector(1 downto 0); -- 1 memtoreg 0 regwrite
-	signal exmemm : std_logic_vector(2 downto 0); -- 2 branch 1 memread 0 memwrite
+	signal exmemm : std_logic_vector(3 downto 0); -- 3 jam 2 branch 1 memread 0 memwrite
 	signal exmempcbranch : std_logic_vector(31 downto 0);
 	signal exmemz : std_logic;
 	signal exmemresult : std_logic_vector(31 downto 0);
@@ -161,7 +161,7 @@ architecture rtl of processor is
 	
 	signal memwbwb : std_logic_vector(1 downto 0); -- 1 memtoreg 0 regwrite
 	signal memwbd_dataout : std_logic_vector(31 downto 0);
-	signal memwbresult : std_logic_vetor(31 downto 0);
+	signal memwbresult : std_logic_vector(31 downto 0);
 	signal memwba3 : std_logic_vector(4 downto 0);
 	
 begin   
@@ -200,7 +200,7 @@ begin
 		MemWrite => memwrite,
 		ALUSrc => alusrc,
 		ALUOp => aluop,
-		RegWrite => regwrite,
+		RegWrite => we3,
 		RegDst => regdst
 	);
 	
@@ -241,20 +241,20 @@ begin
 	pc_aftermux <= exmempcbranch when exmemm(2) = '1' and exmemz = '1' else
 						pcmas4;
 						
-						--Faltan:
-	pcnext <= pcjump when jump = '1' else
+						--Faltan (ya no en teoria):
+	pcnext <= pcjump when exmemm(3) = '1' else
 				 pc_aftermux;
 				 
-  
-	pcjump <= pcmas4(31 downto 28) & jumpoffset(27 downto 0);
+    pcjump <= (others => '0');
+	--pcjump <= pcmas4(31 downto 28) & jumpoffset(27 downto 0);
 	
-	process(Clk, Reset)
-	  begin
-	    if Reset = '1' then <= (others => '0');
-	    elsif rising_edge(Clk) then
+	--process(Clk, Reset)
+	  --begin
+	   --- if Reset = '1' then pc <= (others => '0');
+	    ---elsif rising_edge(Clk) then
 	    
-	    end if;
-	  end process;
+	    --end if;
+	  --end process;
 	    
 	--Actualizacion del pc
 	process (Clk, Reset)
@@ -278,7 +278,7 @@ begin
 			exmemwb <= (others => '0');
 			exmemm  <= (others => '0');
 			exmempcbranch <= (others => '0');
-			exmemz <= (others => '0');
+			exmemz <= '0';
 			exmemresult <= (others => '0');
 			exmemrd2 <= (others => '0');
 			exmema3  <= (others => '0');
@@ -294,7 +294,7 @@ begin
 		  	ifidInstr <= IDataIn;
 			ifidpcmas4 <= pc + 4;
 
-			idexwb <= (memtoreg & regwrite);	
+			idexwb <= (memtoreg & we3);	
 			idexm <= (jump & branch & memread & memwrite);
 			idexex  <= (aluop & regdst & alusrc);
 			idexpcmas4  <= ifidpcmas4;
@@ -310,12 +310,15 @@ begin
 			exmemz <= zflag;
 			exmemresult <= result;
 			exmemrd2 <= idexrd2;
-			exmema3  <= idex2016 when idexex(1) = '0' else
-					idex1511;
+			if idexex(1) = '0' then
+				exmema3  <= idex2016;
+			else
+				exmema3 <= idex1511;
+			end if;
 	
 			memwbwb <= exmemwb;
 			memwbd_dataout <= DDataIn;
-			memwbresult <= idexresult;
+			memwbresult <= exmemresult;
 			memwba3 <= exmema3;  
 		end if;
 	end process;
@@ -323,10 +326,10 @@ begin
 
 	
 	i_dataout <= ifidInstr;
-	DAddr <= result;
-	DDataOut <= rd2;
-	DRdEn <= memread;
-	DWrEn <= memwrite;
+	DAddr <= exmemresult;
+	DDataOut <= exmemrd2;
+	DRdEn <= '1';
+	DWrEn <= exmemm(0);
 	d_dataout <= DDataIn; 
 	IAddr <= pc;
 	
