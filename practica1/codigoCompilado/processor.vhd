@@ -145,6 +145,7 @@ architecture rtl of processor is
 	signal idexm : std_logic_vector(3 downto 0); -- 3 jam 2 branch 1 memread 0 memwrite
 	signal idexex : std_logic_vector(4 downto 0); -- 4 downto 2 aluop 1 regdst 0 alusrc
 	signal idexpcmas4 : std_logic_vector(31 downto 0);
+	signal idexpcjump  : std_logic_vector(31 downto 0);
 	signal idexrd1 : std_logic_vector(31 downto 0);
 	signal idexrd2 : std_logic_vector(31 downto 0);
 	signal ideximm : std_logic_vector(31 downto 0);
@@ -154,6 +155,7 @@ architecture rtl of processor is
 	signal exmemwb : std_logic_vector(1 downto 0); -- 1 memtoreg 0 regwrite
 	signal exmemm : std_logic_vector(3 downto 0); -- 3 jam 2 branch 1 memread 0 memwrite
 	signal exmempcbranch : std_logic_vector(31 downto 0);
+	signal exmempcjump  : std_logic_vector(31 downto 0);
 	signal exmemz : std_logic;
 	signal exmemresult : std_logic_vector(31 downto 0);
 	signal exmemrd2 : std_logic_vector(31 downto 0);
@@ -234,28 +236,18 @@ begin
 	wd3 <= memwbresult when memwbwb(1) = '0' else memwbd_dataout;
 	
 	-- Empezamos con el calculo del proximo PC
-	pcmas4 <= pc + 4;
+	--pcmas4 <= pc + 4;
 	pcbranch <= idexpcmas4 + ((ideximm(29 downto 0) & "00")); -- pc+4 + shiftleft2(immext)
 	jumpoffset <= i_dataout(25 downto 0) & "00";
 	-- Una vez tenemos pc+4, pcbranch i pcjump, hacemos muxes.
 	pc_aftermux <= exmempcbranch when exmemm(2) = '1' and exmemz = '1' else
 						pcmas4;
 						
-						--Faltan (ya no en teoria):
-	pcnext <= pcjump when exmemm(3) = '1' else
+	idexpcjump <= ifidpcmas4(31 downto 28) & jumpoffset(27 downto 0);
+	pcnext <= exmempcjump when exmemm(3) = '1' else
 				 pc_aftermux;
 				 
-    pcjump <= (others => '0');
-	--pcjump <= pcmas4(31 downto 28) & jumpoffset(27 downto 0);
-	
-	--process(Clk, Reset)
-	  --begin
-	   --- if Reset = '1' then pc <= (others => '0');
-	    ---elsif rising_edge(Clk) then
-	    
-	    --end if;
-	  --end process;
-	    
+    	
 	--Actualizacion del pc
 	process (Clk, Reset)
 		begin
@@ -269,6 +261,7 @@ begin
 			idexm <= (others => '0');
 			idexex  <= (others => '0');
 			idexpcmas4  <= (others => '0');
+			idexpcjump <= (others => '0');
 			idexrd1  <= (others => '0');
 			idexrd2  <= (others => '0');
 			ideximm <= (others => '0');
@@ -278,6 +271,7 @@ begin
 			exmemwb <= (others => '0');
 			exmemm  <= (others => '0');
 			exmempcbranch <= (others => '0');
+			exmempcjump <= (others => '0');
 			exmemz <= '0';
 			exmemresult <= (others => '0');
 			exmemrd2 <= (others => '0');
@@ -307,6 +301,7 @@ begin
 			exmemwb <= idexwb;
 			exmemm  <= idexm;
 			exmempcbranch <= pcbranch;
+			exmempcjump <= idexpcjump;
 			exmemz <= zflag;
 			exmemresult <= result;
 			exmemrd2 <= idexrd2;
