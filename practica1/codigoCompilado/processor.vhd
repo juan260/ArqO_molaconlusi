@@ -97,7 +97,7 @@ architecture rtl of processor is
 	signal pcmas4: std_logic_vector (31 downto 0);
 	signal pcbranch: std_logic_vector (31 downto 0);
 	signal pc_aftermux: std_logic_vector (31 downto 0);	
-	signal pcjump: std_logic_vector (31 downto 0);
+	--signal pcjump: std_logic_vector (31 downto 0);
 	signal pcnext: std_logic_vector (31 downto 0);
 	--singal pcaux: std	
 	
@@ -236,14 +236,14 @@ begin
 	wd3 <= memwbresult when memwbwb(1) = '0' else memwbd_dataout;
 	
 	-- Empezamos con el calculo del proximo PC
-	--pcmas4 <= pc + 4;
+	pcmas4 <= pc + 4;
 	pcbranch <= idexpcmas4 + ((ideximm(29 downto 0) & "00")); -- pc+4 + shiftleft2(immext)
 	jumpoffset <= i_dataout(25 downto 0) & "00";
 	-- Una vez tenemos pc+4, pcbranch i pcjump, hacemos muxes.
 	pc_aftermux <= exmempcbranch when exmemm(2) = '1' and exmemz = '1' else
 						pcmas4;
 						
-	idexpcjump <= ifidpcmas4(31 downto 28) & jumpoffset(27 downto 0);
+	
 	pcnext <= exmempcjump when exmemm(3) = '1' else
 				 pc_aftermux;
 				 
@@ -267,6 +267,7 @@ begin
 			ideximm <= (others => '0');
 			idex2016  <= (others => '0');
 			idex1511  <= (others => '0');
+			idexpcjump <= (others => '0');
 	
 			exmemwb <= (others => '0');
 			exmemm  <= (others => '0');
@@ -297,6 +298,7 @@ begin
 			ideximm <= immext;
 			idex2016  <= i_dataout(20 downto 16);
 			idex1511  <= i_dataout(15 downto 11);
+			idexpcjump <= ifidpcmas4(31 downto 28) & jumpoffset(27 downto 0);
 	
 			exmemwb <= idexwb;
 			exmemm  <= idexm;
