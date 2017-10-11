@@ -65,6 +65,14 @@ main:
 salto:
   sub $t4, $s0, $t7     # sub $r12, $r16, $r15    -> r12 = 9
   beq $s3, $s4, nosalto # beq $r19, $r20, nosalto -> este branch NO debe ejecutarse
+ j target
+  nop
+  nop
+  nop
+  sub $t4, $zero, $t6
+  
+target:
+  slti $t4, $t5, 1
 final:
   beq $zero, $zero, final # -> bucle infinito, volvera aqui tras varios NOPs.
   nop

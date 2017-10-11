@@ -84,7 +84,7 @@ begin
 	            '1';
 
 	--RegDst
-	RegDst <= '1' else OpCode = OP_RTYPE else 
+	RegDst <= '1' when OpCode = OP_RTYPE else 
 	          '0';
 
 	--Jump

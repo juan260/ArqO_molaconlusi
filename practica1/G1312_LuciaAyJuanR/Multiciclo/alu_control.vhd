@@ -1,7 +1,7 @@
 --------------------------------------------------------------------------------
 -- Bloque de control para la ALU. Arq0 2017.
 --
--- (INCLUIR AQUI LA INFORMACION SOBRE LOS AUTORES)
+-- Lucia Asencio Martin y Juan Riera Gomez
 --
 --------------------------------------------------------------------------------
 
@@ -45,7 +45,7 @@ begin
 	process (ALUOp, Funct)
 	begin
 
-	if ALUOp = AlOp_Add then
+	if ALUOp = AluOp_Add then
 		ALUControl <= ALU_ADD;
 	elsif ALUOp = AluOp_Sub then
 		ALUControl <= ALU_SUB;
