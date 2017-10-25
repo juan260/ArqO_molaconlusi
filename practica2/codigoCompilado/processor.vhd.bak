@@ -110,6 +110,25 @@ architecture rtl of processor is
 	   );
 	end component;
 	
+	-- hazard detection unit 
+
+	component hazard_detecion_unit is
+	   port(
+	 
+		  -- Output para pc:
+		  Pcwrite : out std_logic_vector(31 downto 0);
+		  -- output para cambiar primer registro
+		  Ifidwrite : out std_logic;
+		  -- Para hacer el nop sobre el registro idex
+		  Idexmux : out std_logic;
+		  
+		  --Inputs
+		  Idexmemread : std_logic;
+		  Idexrd2 : std_logic_vector(4 downto 0);
+		  Rd1: std_logic_vector(4 downto 0);
+		  Rd2: std_logic_vector(4 downto 0);
+	   );
+	end component;
 	-- Todos los cables que vamos a necesitar, uso minusculas para diferenciar
 	
 	-- PC, creo que aqui hacian falta mas cosas :(
@@ -120,6 +139,7 @@ architecture rtl of processor is
 	--signal pcjump: std_logic_vector (31 downto 0);
 	signal pcnext: std_logic_vector (31 downto 0);
 	--singal pcaux: std	
+	signal pcwrite : std_logic;
 	
 	-- Las que salen de la inst memory y no van al banco de regs
 	signal i_dataout: std_logic_vector(31 downto 0);
@@ -160,7 +180,8 @@ architecture rtl of processor is
 	-- Seniales para los registros del multiciclo
 	signal ifidpcmas4 : std_logic_vector(31 downto 0);
 	signal ifidInstr : std_logic_vector(31 downto 0);
-	
+	signal ifidwrite : std_logic;
+
 	signal idexwb : std_logic_vector(1 downto 0); -- 1 memtoreg 0 regwrite
 	signal idexm : std_logic_vector(3 downto 0); -- 3 jam 2 branch 1 memread 0 memwrite
 	signal idexex : std_logic_vector(4 downto 0); -- 4 downto 2 aluop 1 regdst 0 alusrc
@@ -172,7 +193,7 @@ architecture rtl of processor is
 	signal idex2621 : std_logic_vector(4 downto 0);
 	signal idex2016 : std_logic_vector(4 downto 0);
 	signal idex1511 : std_logic_vector(4 downto 0);
-	
+	signal idexmux : std_logic;
 	
 	signal exmemwb : std_logic_vector(1 downto 0); -- 1 memtoreg 0 regwrite
 	signal exmemm : std_logic_vector(3 downto 0); -- 3 jam 2 branch 1 memread 0 memwrite
@@ -250,12 +271,24 @@ begin
 	  -- Inputs
 	  --NOTA RS = A1 y RD = A3
 	  idexRs => idex2621,
-	  
+	  idexRt => idex2016,
+	  	  
 	  exmemRegWrite	=> 	exmemwb(0),
 	  exmemRd	=>	exmema3,
 	  
 	  memwbRegWrite	=> memwbwb(0),
 	  memwbRd	=> memwba3
+	);
+
+	mi hazard_detection_unit: hazard_detection_unit
+	portmap(
+	  Pcwrite => pcwrite;
+	  Ifidwrite => ifidwrite;
+	  Idexmux => idexmux;
+	  Idexmemread => idexm(1);
+	  Idexrd2 => idexrd2;
+	  Rd1 => rd1;
+	  Rd2 => rd2;
 	);
 	-- Ahora empezarian las asignaciones concurrentes
 	
@@ -332,13 +365,20 @@ begin
 			memwba3 <= (others => '0');
 	
 		elsif rising_edge(Clk) then
-				 
-			pc <= pcnext;
-		  	ifidInstr <= IDataIn;
-			ifidpcmas4 <= pc + 4;
-
-			idexwb <= (memtoreg & we3);	
-			idexm <= (jump & branch & memread & memwrite);
+			-- idea: 
+			if pcwrite = '1'then
+				pc <= pcnext;
+			end if;
+			if ifidwrite = '1' then
+				ifidInstr <= IDataIn;
+				ifidpcmas4 <= pc + 4;
+			end if;
+			-- En las 2 proximas sentencias el when else distingue
+			-- el caso donde se hace nop por hazard detection (idexmux = 0)
+			idexwb <= (memtoreg & we3) when idexmux = '1' else
+				  (memtoreg & '0');	
+			idexm <= (jump & branch & memread & memwrite) when idexmux = '1' else
+				 (jump & branch & memread & '0');
 			idexex  <= (aluop & regdst & alusrc);
 			idexpcmas4  <= ifidpcmas4;
 			idexrd1  <= rd1;
