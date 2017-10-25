@@ -124,7 +124,7 @@ architecture rtl of processor is
 		  
 		  --Inputs
 		  Idexmemread : std_logic;
-		  Idex1511 : std_logic_vector(4 downto 0);
+		  Idex2016 : std_logic_vector(4 downto 0);
 		  A1: std_logic_vector(4 downto 0);
 		  A2: std_logic_vector(4 downto 0)
 	   );
@@ -190,7 +190,7 @@ architecture rtl of processor is
 	signal idexrd1 : std_logic_vector(31 downto 0);
 	signal idexrd2 : std_logic_vector(31 downto 0);
 	signal ideximm : std_logic_vector(31 downto 0);
-	signal idex2621 : std_logic_vector(4 downto 0);
+	signal idex2521 : std_logic_vector(4 downto 0);
 	signal idex2016 : std_logic_vector(4 downto 0);
 	signal idex1511 : std_logic_vector(4 downto 0);
 	signal idexmux : std_logic;
@@ -235,7 +235,7 @@ begin
 	miAlu: alu
 	port map(
 		OpA => forwardMuxA,
-		Opb => forwardMuxB,
+		Opb => opb,
 		Control => control,
 		Result => result,
 		ZFlag => zflag
@@ -270,7 +270,7 @@ begin
 	  
 	  -- Inputs
 	  --NOTA RS = A1 y RD = A3
-	  idexRs => idex2621,
+	  idexRs => idex2521,
 	  idexRt => idex2016,
 	  	  
 	  exmemRegWrite	=> 	exmemwb(0),
@@ -286,7 +286,7 @@ begin
 	  Ifidwrite => ifidwrite,
 	  Idexmux => idexmux,
 	  Idexmemread => idexm(1),
-	  Idex1511 => idex1511,
+	  Idex2016 => idex2016,
 	  A1 => a1,
 	  A2 => a2
 	);
@@ -304,7 +304,7 @@ begin
 	-- Mux para el write register
 	a3 <= memwba3;
 	-- Mux para OpB de la ALU
-	opb <= idexrd2 when idexex(0) = '0' else ideximm;
+	opb <= forwardMuxB when idexex(0) = '0' else ideximm;
 	-- Muxes de adelantamiento para la ALU
 	forwardMuxA <= 	idexrd1 when forwardA = "00" else
 					wd3 when forwardA = "01" else exmemresult;
@@ -348,6 +348,7 @@ begin
 			ideximm <= (others => '0');
 			idex2016  <= (others => '0');
 			idex1511  <= (others => '0');
+			idex2521 <= (others => '0');
 			idexpcjump <= (others => '0');
 	
 			exmemwb <= (others => '0');
@@ -388,6 +389,7 @@ begin
 			idexrd1  <= rd1;
 			idexrd2  <= rd2;
 			ideximm <= immext;
+			idex2521 <= i_dataout(25 downto 21);
 			idex2016  <= i_dataout(20 downto 16);
 			idex1511  <= i_dataout(15 downto 11);
 			idexpcjump <= ifidpcmas4(31 downto 28) & jumpoffset(27 downto 0);
@@ -417,7 +419,7 @@ begin
 	i_dataout <= ifidInstr;
 	DAddr <= exmemresult;
 	DDataOut <= exmemrd2;
-	DRdEn <= '1';
+	DRdEn <= exmemm(1);
 	DWrEn <= exmemm(0);
 	d_dataout <= DDataIn; 
 	IAddr <= pc;

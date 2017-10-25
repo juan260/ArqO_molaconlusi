@@ -62,10 +62,11 @@ begin
    -- y el registro en que se escribe no es el cero,
    -- y se quiere leer el mismo numero de registro que se va a escribir
    -- entonces entregamos a rd1 el valor a escribir (wd3)
-   Rd1 <= regs(conv_integer(A1)) when We3 = '0' else
-	  Wd3 when We3 = '1' and A3 /= "00000" and A1 = A3;
-   Rd2 <= regs(conv_integer(A2)) when We3 = '0' else
-	  Wd3 when We3 = '1' and A3 /= "00000" and A2 = A3;
+   Rd1 <= Wd3 when We3 = '1' and A3 /= "00000" and A1 = A3 else
+	  regs(conv_integer(A1));
+
+   Rd2 <= Wd3 when We3 = '1' and A3 /= "00000" and A2 = A3 else
+	  regs(conv_integer(A2));
 
 end architecture;
 
