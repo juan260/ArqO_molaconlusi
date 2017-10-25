@@ -112,7 +112,7 @@ architecture rtl of processor is
 	
 	-- hazard detection unit 
 
-	component hazard_detecion_unit is
+	component hazard_detection_unit is
 	   port(
 	 
 		  -- Output para pc:
@@ -124,9 +124,9 @@ architecture rtl of processor is
 		  
 		  --Inputs
 		  Idexmemread : std_logic;
-		  Idexrd2 : std_logic_vector(4 downto 0);
-		  Rd1: std_logic_vector(4 downto 0);
-		  Rd2: std_logic_vector(4 downto 0);
+		  Idex1511 : std_logic_vector(4 downto 0);
+		  A1: std_logic_vector(4 downto 0);
+		  A2: std_logic_vector(4 downto 0)
 	   );
 	end component;
 	-- Todos los cables que vamos a necesitar, uso minusculas para diferenciar
@@ -280,15 +280,15 @@ begin
 	  memwbRd	=> memwba3
 	);
 
-	mi hazard_detection_unit: hazard_detection_unit
-	portmap(
-	  Pcwrite => pcwrite;
-	  Ifidwrite => ifidwrite;
-	  Idexmux => idexmux;
-	  Idexmemread => idexm(1);
-	  Idexrd2 => idexrd2;
-	  Rd1 => rd1;
-	  Rd2 => rd2;
+	miHazard_detection_unit: hazard_detection_unit
+	port map(
+	  Pcwrite => pcwrite,
+	  Ifidwrite => ifidwrite,
+	  Idexmux => idexmux,
+	  Idexmemread => idexm(1),
+	  Idex1511 => idex1511,
+	  A1 => a1,
+	  A2 => a2
 	);
 	-- Ahora empezarian las asignaciones concurrentes
 	
@@ -375,10 +375,14 @@ begin
 			end if;
 			-- En las 2 proximas sentencias el when else distingue
 			-- el caso donde se hace nop por hazard detection (idexmux = 0)
-			idexwb <= (memtoreg & we3) when idexmux = '1' else
-				  (memtoreg & '0');	
-			idexm <= (jump & branch & memread & memwrite) when idexmux = '1' else
-				 (jump & branch & memread & '0');
+			if idexmux = '1' then
+				idexwb <= memtoreg & we3;
+				idexm <= jump & branch & memread & memwrite;
+			else 
+				idexwb <= memtoreg & '0';
+				idexm <= jump & branch & memread & '0';
+			end if;
+
 			idexex  <= (aluop & regdst & alusrc);
 			idexpcmas4  <= ifidpcmas4;
 			idexrd1  <= rd1;
