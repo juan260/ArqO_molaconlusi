@@ -92,7 +92,7 @@ main:
   nop
   nop
   # RIESGOS MEMORIA MEMORIA
-  sw $t4, 0($zero)
+  sw $t4, 0($zero) # guardo un 40
   lw $t2, 0($zero) # en r10 un 40
   nop
   nop
@@ -103,16 +103,17 @@ main:
   nop
   nop
   add $t7, $t2, $t2 # en r15, un 4 = 2 + 2
-  add $s0, $t4, $zero # en r16, un 4
+  add $s0, $t7, $zero # en r16, un 4 = 4 + 0
   beq $t7, $s0, final # salta
-  slt $t7, $s0, $s0 # en r15, un 1
-  sub $t7, $s0, $t2 # en r15, un 2 = 4 - 2
+  slt $t7, $s0, $s0 # en r15, un 0 NO SE EJECUTA
+  sub $t7, $s0, $t2 # en r15, un 38 = 40 - 2 NO SE EJECUTA
   nop
   final:
   beq $zero, $t7, final # no salta: si salta, bucle inf
-  lw $t7, 0($zero) # en r15 un 40 
-  j final2
-  sub $t7, $t7, $t7 # en r15 un cerapio
+  lw $t7, 0($zero) # en r15 un 2
+  j final2 
+  addi $t7, $t7, 1 # r15++ 3 NO SE EJECUTA
+  addi $t7, $t7, 1 # r15++ 4 NO SE EJECUTA
   final2:
   nop
   nop

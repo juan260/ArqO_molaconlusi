@@ -372,7 +372,7 @@ begin
 			end if;
 			
 
-			if (exmemm(2) = '1' and exmemz = '1') or exmemm(3) = '1' then
+			if (idexm(2) = '1' and zflag = '1') or idexm(3) = '1' then
 				ifidInstr <= (others => '0');
 				ifidpcmas4 <= (others => '0');
 			elsif ifidwrite = '1' then
