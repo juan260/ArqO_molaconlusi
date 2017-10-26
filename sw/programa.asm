@@ -59,8 +59,9 @@ main:
   nop
   nop
   add $t4, $t1, $t2 # en r12 un 41 = 5 + 36
-  nop
-  sw $t4, 28($zero) # dependencia con la 2ª anterior
+  add $t6, $t4, $t4 # en r14 un 82
+  sw $t6, 28($t4) # dependencia con la 1ª anterior
+  lw $t7, 28($t4) 
   nop
   nop
   nop
@@ -99,4 +100,51 @@ main:
   nop
   lw $t2, 4($zero) # en r10 un 2
   sw $t2, 0($zero) # Guarda el 2 en posicion 0 de memoria
+  nop
+  nop
+  add $t7, $t2, $t2 # en r15, un 4 = 2 + 2
+  add $s0, $t4, $zero # en r16, un 4
+  beq $t7, $s0, final # salta
+  slt $t7, $s0, $s0 # en r15, un 1
+  sub $t7, $s0, $t2 # en r15, un 2 = 4 - 2
+  nop
+  final:
+  beq $zero, $t7, final # no salta: si salta, bucle inf
+  lw $t7, 0($zero) # en r15 un 40 
+  j final2
+  sub $t7, $t7, $t7 # en r15 un cerapio
+  final2:
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  sub $t1, $t1, $t1 #guarda 0 en r9
+  bucle:
+  j bucle
   
+  
+  
+  
+  
+  
+   

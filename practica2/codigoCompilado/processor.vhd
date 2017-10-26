@@ -370,10 +370,16 @@ begin
 			if pcwrite = '1'then
 				pc <= pcnext;
 			end if;
-			if ifidwrite = '1' then
+			
+
+			if (exmemm(2) = '1' and exmemz = '1') or exmemm(3) = '1' then
+				ifidInstr <= (others => '0');
+				ifidpcmas4 <= (others => '0');
+			elsif ifidwrite = '1' then
 				ifidInstr <= IDataIn;
 				ifidpcmas4 <= pc + 4;
 			end if;
+
 			-- En las 2 proximas sentencias el when else distingue
 			-- el caso donde se hace nop por hazard detection (idexmux = 0)
 			if idexmux = '1' then
@@ -400,13 +406,13 @@ begin
 			exmempcjump <= idexpcjump;
 			exmemz <= zflag;
 			exmemresult <= result;
-			exmemrd2 <= idexrd2;
+			exmemrd2 <= forwardMuxB;
 			if idexex(1) = '0' then
 				exmema3  <= idex2016;
 			else
 				exmema3 <= idex1511;
 			end if;
-	
+
 			memwbwb <= exmemwb;
 			memwbd_dataout <= DDataIn;
 			memwbresult <= exmemresult;
