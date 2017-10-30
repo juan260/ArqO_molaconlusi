@@ -183,10 +183,10 @@ architecture rtl of processor is
 	signal ifidwrite : std_logic;
 
 	signal idexwb : std_logic_vector(1 downto 0); -- 1 memtoreg 0 regwrite
-	signal idexm : std_logic_vector(2 downto 0); -- 3 jam 2 branch 1 memread 0 memwrite
+	signal idexm : std_logic_vector(3 downto 0); -- 3 jam 2 branch 1 memread 0 memwrite
 	signal idexex : std_logic_vector(4 downto 0); -- 4 downto 2 aluop 1 regdst 0 alusrc
 	signal idexpcmas4 : std_logic_vector(31 downto 0);
-	--signal idexpcjump  : std_logic_vector(31 downto 0);
+	signal idexpcjump  : std_logic_vector(31 downto 0);
 	signal idexrd1 : std_logic_vector(31 downto 0);
 	signal idexrd2 : std_logic_vector(31 downto 0);
 	signal ideximm : std_logic_vector(31 downto 0);
@@ -196,9 +196,9 @@ architecture rtl of processor is
 	signal idexmux : std_logic;
 	
 	signal exmemwb : std_logic_vector(1 downto 0); -- 1 memtoreg 0 regwrite
-	signal exmemm : std_logic_vector(2 downto 0); -- 3 jam 2 branch 1 memread 0 memwrite
+	signal exmemm : std_logic_vector(3 downto 0); -- 3 jam 2 branch 1 memread 0 memwrite
 	signal exmempcbranch : std_logic_vector(31 downto 0);
-	--signal exmempcjump  : std_logic_vector(31 downto 0);
+	signal exmempcjump  : std_logic_vector(31 downto 0);
 	signal exmemz : std_logic;
 	signal exmemresult : std_logic_vector(31 downto 0);
 	signal exmemrd2 : std_logic_vector(31 downto 0);
@@ -325,7 +325,7 @@ begin
 						pcmas4;
 						
 	
-	pcnext <= (ifidpcmas4(31 downto 28) & jumpoffset(27 downto 0)) when jump = '1' else
+	pcnext <= exmempcjump when exmemm(3) = '1' else
 				 pc_aftermux;
 				 
     	
@@ -342,18 +342,19 @@ begin
 			idexm <= (others => '0');
 			idexex  <= (others => '0');
 			idexpcmas4  <= (others => '0');
-			--idexpcjump <= (others => '0');
+			idexpcjump <= (others => '0');
 			idexrd1  <= (others => '0');
 			idexrd2  <= (others => '0');
 			ideximm <= (others => '0');
 			idex2016  <= (others => '0');
 			idex1511  <= (others => '0');
 			idex2521 <= (others => '0');
+			idexpcjump <= (others => '0');
 	
 			exmemwb <= (others => '0');
 			exmemm  <= (others => '0');
 			exmempcbranch <= (others => '0');
-			--exmempcjump <= (others => '0');
+			exmempcjump <= (others => '0');
 			exmemz <= '0';
 			exmemresult <= (others => '0');
 			exmemrd2 <= (others => '0');
@@ -371,7 +372,7 @@ begin
 			end if;
 			
 
-			if (idexm(2) = '1' and zflag = '1') then
+			if (idexm(2) = '1' and zflag = '1') or idexm(3) = '1' then
 				ifidInstr <= (others => '0');
 				ifidpcmas4 <= (others => '0');
 			elsif ifidwrite = '1' then
@@ -383,10 +384,10 @@ begin
 			-- el caso donde se hace nop por hazard detection (idexmux = 0)
 			if idexmux = '1' then
 				idexwb <= memtoreg & we3;
-				idexm <= branch & memread & memwrite;
+				idexm <= jump & branch & memread & memwrite;
 			else 
 				idexwb <= memtoreg & '0';
-				idexm <= branch & memread & '0';
+				idexm <= jump & branch & memread & '0';
 			end if;
 
 			idexex  <= (aluop & regdst & alusrc);
@@ -397,12 +398,12 @@ begin
 			idex2521 <= i_dataout(25 downto 21);
 			idex2016  <= i_dataout(20 downto 16);
 			idex1511  <= i_dataout(15 downto 11);
-			--idexpcjump <= ifidpcmas4(31 downto 28) & jumpoffset(27 downto 0);
+			idexpcjump <= ifidpcmas4(31 downto 28) & jumpoffset(27 downto 0);
 	
 			exmemwb <= idexwb;
 			exmemm  <= idexm;
 			exmempcbranch <= pcbranch;
-			--exmempcjump <= idexpcjump;
+			exmempcjump <= idexpcjump;
 			exmemz <= zflag;
 			exmemresult <= result;
 			exmemrd2 <= forwardMuxB;

@@ -45,27 +45,26 @@ main:
   nop
   nop
   nop
-  add $s0, $t1, $t2  # en r16 un 41 = 5 + 36
-  add $s0, $s0, $s0  # Dependencia con la anterior  # en r16 un 82 = 41 + 41. 
-  add $s1, $s0, $s0  # dependencia con la anterior  # en r17 un 164 = 82 + 82
+  add $s0, $t1, $t2  # en r16 un 20 = 5 + 15
+  add $s0, $s0, $s0  # Dependencia con la anterior  # en r16 un 40 = 20 + 20. 
+  add $s1, $s0, $s0  # dependencia con la anterior  # en r16 un 80 = 40 + 40
   nop
   nop
   nop
   nop
   # RIESGOS REGISTRO MEMORIA
   add $t3, $t1, $t2 # en r11 un 41 = 5 + 36
-  sw $t3, 24($zero) # dependencia con la anterior 
+  sw $t3, 24($zero) # dependencia con la anterior
   nop
   nop
   nop
-  add $t4, $t1, $t2 # en r12 un 41 = 5 + 36
-  add $t6, $t4, $t4 # en r14 un 82
-  sw $t6, 28($t4) # dependencia con la 1ª anterior
-  lw $t7, 28($t4) 
+  add $t4, $t1, $t2 # en r11 un 41 = 5 + 36
+  nop
+  sw $t4, 28($zero) # dependencia con la 2ª anterior
   nop
   nop
   nop
-  add $t5, $t1, $t2 # en r13 un 41 = 5 + 36
+  add $t5, $t1, $t2 # en r11 un 41 = 5 + 36
   nop
   nop
   sw $t5, 32($zero) # dependencia con la 3ª anterior
@@ -74,17 +73,17 @@ main:
   nop
   nop
   # RIESGOS MEMORIA REGISTRO
-  lw $t3, 0($zero) # en r11 un 1
+  lw $t3, 0($zero) # en r9 un 1
   add $t4, $t2, $t3 # dependencia con la anterior # en r12 37 = 36 + 1
   nop
   nop
   nop
-  lw $t3, 4($zero) # en r11 un 2
+  lw $t3, 4($zero) # en r9 un 2
   nop
   add $t4, $t2, $t3 # dependencia con la 2ª anterior # en r12 38 = 36 + 2
   nop
   nop
-  lw $t3, 8($zero) # en r11 un 4
+  lw $t3, 8($zero) # en r9 un 4
   nop
   nop
   add $t4, $t2, $t3 # dependencia con la 3ª anterior # en r12 40 = 36 + 4
@@ -92,7 +91,7 @@ main:
   nop
   nop
   # RIESGOS MEMORIA MEMORIA
-  sw $t4, 0($zero) # guardo un 40
+  sw $t4, 0($zero)
   lw $t2, 0($zero) # en r10 un 40
   nop
   nop
@@ -100,53 +99,4 @@ main:
   nop
   lw $t2, 4($zero) # en r10 un 2
   sw $t2, 0($zero) # Guarda el 2 en posicion 0 de memoria
-  nop
-  nop
-  add $t7, $t2, $t2 # en r15, un 4 = 2 + 2
-  add $s0, $t7, $zero # en r16, un 4 = 4 + 0
-  beq $t7, $s0, final # salta
-  slt $t7, $s0, $s0 # en r15, un 0 NO SE EJECUTA
-  sub $t7, $s0, $t2 # en r15, un 38 = 40 - 2 NO SE EJECUTA
-  nop
-  final:
-  beq $zero, $t7, final # no salta: si salta, bucle inf
-  lw $t7, 0($zero) # en r15 un 2
-  j final2 
-  addi $t7, $t7, 1 # r15++ 3 NO SE EJECUTA
-  addi $t7, $t7, 1 # r15++ 4 NO SE EJECUTA
-  final2:
-  addi $t7, $t7, 10 # r15+=10 12 SI SE EJECUTA
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  nop
-  sub $t1, $t1, $t1 #guarda 0 en r9
-  bucle:
-  j bucle
   
-  
-  
-  
-  
-  
-   
