@@ -356,8 +356,6 @@ begin
 			exmemResult when forwardA2 = "01" else
 			wd3 when forwardA2 = "10" else
 			rd2;
-
-	forwardMuxB2 : std_logic_vector(31 downto 0);
 	 
     	
 	--Actualizacion del pc
