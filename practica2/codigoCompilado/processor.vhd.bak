@@ -93,20 +93,27 @@ architecture rtl of processor is
 	-- Forwarding unit
 	component ForwardingUnit is
 		port(
-		  
-	   -- Outputs:
+ 
+	  -- Outputs:
 	  ForwardA 	 : out std_logic_vector(1 downto 0);
 	  ForwardB	 : out std_logic_vector(1 downto 0);
-	  
-		 -- Inputs
+	  ForwardA2	 : out std_logic_vector(1 downto 0);
+	  ForwardB2	 : out std_logic_vector(1 downto 0);
+	  -- Inputs
 	  idexRs 	 : in  std_logic_vector(4 downto 0);
 	  idexRt	 : in  std_logic_vector(4 downto 0);
-	  
+	  idexRw	 : in std_logic;
+
 	  exmemRegWrite : in  std_logic;
 	  exmemRd	 : in  std_logic_vector(4 downto 0);
 	  
 	  memwbRegWrite	: in  std_logic;
-	  memwbRd	 : in  std_logic_vector(4 downto 0)
+	  memwbRd	 : in  std_logic_vector(4 downto 0);
+	  -- Inputs extra para kkbeq
+	  Ifid2521 : in std_logic_vector(4 downto 0); -- ifidrs
+	  Ifid2016 : in std_logic_vector(4 downto 0); -- ifidrt
+	  
+	  Idexrd : in std_logic_vector(4 downto 0)
 	   );
 	end component;
 	
@@ -183,9 +190,9 @@ architecture rtl of processor is
 	signal ifidwrite : std_logic;
 
 	signal idexwb : std_logic_vector(1 downto 0); -- 1 memtoreg 0 regwrite
-	signal idexm : std_logic_vector(2 downto 0); -- 3 jam 2 branch 1 memread 0 memwrite
+	signal idexm : std_logic_vector(1 downto 0); -- 3 jam 2 branch 1 memread 0 memwrite
 	signal idexex : std_logic_vector(4 downto 0); -- 4 downto 2 aluop 1 regdst 0 alusrc
-	signal idexpcmas4 : std_logic_vector(31 downto 0);
+	--signal idexpcmas4 : std_logic_vector(31 downto 0);
 	--signal idexpcjump  : std_logic_vector(31 downto 0);
 	signal idexrd1 : std_logic_vector(31 downto 0);
 	signal idexrd2 : std_logic_vector(31 downto 0);
@@ -196,8 +203,8 @@ architecture rtl of processor is
 	signal idexmux : std_logic;
 	
 	signal exmemwb : std_logic_vector(1 downto 0); -- 1 memtoreg 0 regwrite
-	signal exmemm : std_logic_vector(2 downto 0); -- 3 jam 2 branch 1 memread 0 memwrite
-	signal exmempcbranch : std_logic_vector(31 downto 0);
+	signal exmemm : std_logic_vector(1 downto 0); -- 3 jam 2 branch 1 memread 0 memwrite
+	--signal exmempcbranch : std_logic_vector(31 downto 0);
 	--signal exmempcjump  : std_logic_vector(31 downto 0);
 	signal exmemz : std_logic;
 	signal exmemresult : std_logic_vector(31 downto 0);
@@ -214,6 +221,11 @@ architecture rtl of processor is
 	signal forwardB : std_logic_vector(1 downto 0);
 	signal forwardMuxA : std_logic_vector(31 downto 0);
 	signal forwardMuxB : std_logic_vector(31 downto 0);
+	signal forwardA2	 : std_logic_vector(1 downto 0);
+	signal forwardB2	 : std_logic_vector(1 downto 0);
+	signal forwardMuxA2 : std_logic_vector(31 downto 0);
+	signal forwardMuxB2 : std_logic_vector(31 downto 0);
+	signal idexrd : std_logic_vector(4 downto 0);
 	
 begin   
 	
@@ -267,11 +279,15 @@ begin
 	  -- Outputs:
 	  ForwardA => forwardA,
 	  ForwardB => forwardB,
+	  ForwardA2 => forwardA2,
+	  ForwardB2 => forwardB2,
 	  
 	  -- Inputs
 	  --NOTA RS = A1 y RD = A3
 	  idexRs => idex2521,
 	  idexRt => idex2016,
+	  idexrd => idexrd,
+	  idexwb(0) => idexrw,
 	  	  
 	  exmemRegWrite	=> 	exmemwb(0),
 	  exmemRd	=>	exmema3,
@@ -318,16 +334,31 @@ begin
 	
 	-- Empezamos con el calculo del proximo PC
 	pcmas4 <= pc + 4;
-	pcbranch <= idexpcmas4 + ((ideximm(29 downto 0) & "00")); -- pc+4 + shiftleft2(immext)
+	pcbranch <= ifidpcmas4 + ((immext(29 downto 0) & "00")); -- pc+4 + shiftleft2(immext)
 	jumpoffset <= i_dataout(25 downto 0) & "00";
 	-- Una vez tenemos pc+4, pcbranch i pcjump, hacemos muxes.
-	pc_aftermux <= exmempcbranch when exmemm(2) = '1' and exmemz = '1' else
+	pc_aftermux <= pcbranch when branch = '1' and (forwardMuxA2 = forwardMuxB2) else
 						pcmas4;
 						
 	
 	pcnext <= (ifidpcmas4(31 downto 28) & jumpoffset(27 downto 0)) when jump = '1' else
 				 pc_aftermux;
-				 
+	
+	exmema3  <= idex2016 when idexex(1) = '0' else
+		idex1511;		
+	
+	forwardMuxA2 <= result when forwardA2 = "00" else
+			exmemResult when forwardA2 = "01" else
+			wd3 when forwardA2 = "10" else
+			rd1;
+
+	forwardMuxB2 <= result when forwardA2 = "00" else
+			exmemResult when forwardA2 = "01" else
+			wd3 when forwardA2 = "10" else
+			rd2;
+
+	forwardMuxB2 : std_logic_vector(31 downto 0);
+	 
     	
 	--Actualizacion del pc
 	process (Clk, Reset)
@@ -341,7 +372,7 @@ begin
 			idexwb <= (others => '0');	
 			idexm <= (others => '0');
 			idexex  <= (others => '0');
-			idexpcmas4  <= (others => '0');
+			--idexpcmas4  <= (others => '0');
 			--idexpcjump <= (others => '0');
 			idexrd1  <= (others => '0');
 			idexrd2  <= (others => '0');
@@ -352,7 +383,7 @@ begin
 	
 			exmemwb <= (others => '0');
 			exmemm  <= (others => '0');
-			exmempcbranch <= (others => '0');
+			--exmempcbranch <= (others => '0');
 			--exmempcjump <= (others => '0');
 			exmemz <= '0';
 			exmemresult <= (others => '0');
@@ -370,11 +401,7 @@ begin
 				pc <= pcnext;
 			end if;
 			
-
-			if (idexm(2) = '1' and zflag = '1') then
-				ifidInstr <= (others => '0');
-				ifidpcmas4 <= (others => '0');
-			elsif ifidwrite = '1' then
+			if ifidwrite = '1' then
 				ifidInstr <= IDataIn;
 				ifidpcmas4 <= pc + 4;
 			end if;
@@ -383,14 +410,14 @@ begin
 			-- el caso donde se hace nop por hazard detection (idexmux = 0)
 			if idexmux = '1' then
 				idexwb <= memtoreg & we3;
-				idexm <= jump & branch & memread & memwrite;
+				idexm <= memread & memwrite;
 			else 
 				idexwb <= memtoreg & '0';
-				idexm <= branch & memread & '0';
+				idexm <= memread & '0';
 			end if;
 
 			idexex  <= (aluop & regdst & alusrc);
-			idexpcmas4  <= ifidpcmas4;
+			--idexpcmas4  <= ifidpcmas4;
 			idexrd1  <= rd1;
 			idexrd2  <= rd2;
 			ideximm <= immext;
@@ -401,7 +428,7 @@ begin
 	
 			exmemwb <= idexwb;
 			exmemm  <= idexm;
-			exmempcbranch <= pcbranch;
+			--exmempcbranch <= pcbranch;
 			--exmempcjump <= idexpcjump;
 			exmemz <= zflag;
 			exmemresult <= result;

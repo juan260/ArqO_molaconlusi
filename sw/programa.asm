@@ -140,7 +140,57 @@ main:
   nop
   nop
   nop
+  #PROBANDO BEQ A PRUEBA DE BOMBAS
   sub $t1, $t1, $t1 #guarda 0 en r9
+  beq $zero, $zero, a
+  addi $t1, $t1, 1124 #NO se ejecuta
+  a:
+  addi $t1, $t1, 1 #guarda 1 en r9
+  beq $zero, $t1, b
+  addi $t1, $t1, 1124 #No se ejecuta
+  b:
+  addi $t1, $t1, -1 #guarda 0 en r9
+  beq $t1, $zero, c #se ejecuta, dependencia de la instr anterior
+  addi $t1, $t1, 1124 #No se ejecuta
+  addi $t1, $t1, 1124 #No se ejecuta
+  addi $t1, $t1, 1124 #No se ejecuta
+  c: 
+  nop
+  nop
+  addi $t2, $zero, 0 #guarda 0 en r10
+  nop
+  beq $t2, $t1, d #Salta, dependencia de una instruccion de hace dos ciclos
+  addi $t1, $t1, 1124 #No se ejecuta
+  addi $t1, $t1, 1124 #No se ejecuta
+  addi $t1, $t1, 1124 #No se ejecuta
+  d:
+  addi $t3, $zero, 4 #guarda 4 en r11
+  nop
+  nop
+  nop
+  addi $t3, $zero, 0 #guarda 0 en r11
+  nop
+  nop
+  beq $t3, $t1, e #Salta, dependencia de una instruccion de hace dos ciclos
+  addi $t1, $t1, 1124 #No se ejecuta
+  addi $t1, $t1, 1124 #No se ejecuta
+  addi $t1, $t1, 1124 #No se ejecuta
+  e:
+  nop
+  addi $t3, $zero, 4 #guarda 4 en r11
+  addi $t2, $zero, 4 #guarda 4 en r10
+  beq $t3, $t2, f #Salta, dependencia las dos instrucciones anteriores
+  addi $t1, $t1, 1124 #No se ejecuta
+  addi $t1, $t1, 1124 #No se ejecuta
+  addi $t1, $t1, 1124 #No se ejecuta
+  f:
+  addi $t3, $zero, 4 #guarda 8 en r11
+  addi $t2, $zero, 4 #guarda 8 en r10
+  nop
+  beq $t3, $t2, bucle #Salta, dependencia de dos instrucciones de hae un ciclo
+  addi $t1, $t1, 1124 #No se ejecuta
+  addi $t1, $t1, 1124 #No se ejecuta
+  addi $t1, $t1, 1124 #No se ejecuta
   bucle:
   j bucle
   
