@@ -147,10 +147,10 @@ main:
   a:
   addi $t1, $t1, 1 #guarda 1 en r9
   beq $zero, $t1, b
-  addi $t1, $t1, 1124 #No se ejecuta
+  addi $t1, $t1, 1124 #No se ejecuta xq t1 ya no es 0!!
   b:
   addi $t1, $t1, -1 #guarda 0 en r9
-  beq $t1, $zero, c #se ejecuta, dependencia de la instr anterior
+  beq $t1, $zero, c #se ejecuta, dependencia de la instr anterior: t1 ya no es 1!!
   addi $t1, $t1, 1124 #No se ejecuta
   addi $t1, $t1, 1124 #No se ejecuta
   addi $t1, $t1, 1124 #No se ejecuta

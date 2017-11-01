@@ -293,7 +293,9 @@ begin
 	  exmemRd	=>	exmema3,
 	  
 	  memwbRegWrite	=> memwbwb(0),
-	  memwbRd	=> memwba3
+	  memwbRd	=> memwba3,
+	  Ifid2521 => i_dataout(25 downto 21),
+	  Ifid2016 => i_dataout(20 downto 16)
 	);
 
 	miHazard_detection_unit: hazard_detection_unit

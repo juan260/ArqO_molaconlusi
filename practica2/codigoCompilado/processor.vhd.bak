@@ -287,13 +287,15 @@ begin
 	  idexRs => idex2521,
 	  idexRt => idex2016,
 	  idexrd => idexrd,
-	  idexwb(0) => idexrw,
+	  idexrw =>idexwb(0),
 	  	  
 	  exmemRegWrite	=> 	exmemwb(0),
 	  exmemRd	=>	exmema3,
 	  
 	  memwbRegWrite	=> memwbwb(0),
-	  memwbRd	=> memwba3
+	  memwbRd	=> memwba3,
+	  Ifid2521 => i_dataout(25 downto 21);,
+	  Ifid2016 => i_dataout(20 downto 16);
 	);
 
 	miHazard_detection_unit: hazard_detection_unit
@@ -356,8 +358,6 @@ begin
 			exmemResult when forwardA2 = "01" else
 			wd3 when forwardA2 = "10" else
 			rd2;
-
-	forwardMuxB2 : std_logic_vector(31 downto 0);
 	 
     	
 	--Actualizacion del pc
