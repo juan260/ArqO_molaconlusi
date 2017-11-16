@@ -140,20 +140,43 @@ main:
   nop
   nop
   nop
+  sw $zero, 0($zero) # guardo un 0
+  lw $t7, 0($zero) #guardo en r15 un 0
+  beq $t7, $zero, extra1
+  addi $t7, $t7, 666 # NO SE EJECUTA
+  nop
+  nop  
+extra1:
+  addi $t7, $zero, 1 # 1 en r15
+  sw $t7, 0($zero) # guardo un 1
+  lw $s0, 0($zero) #guardo en r16 un 1
+  beq $t7, $zero, extra2 # NO SALTA
+  addi $t7, $zero, 777 # SE EJECUTA
+  nop
+  nop
+extra2:
   #PROBANDO BEQ A PRUEBA DE BOMBAS
   sub $t1, $t1, $t1 #guarda 0 en r9
   beq $zero, $zero, a
   addi $t1, $t1, 1124 #NO se ejecuta
+  nop
+  nop
   a:
+  nop
+  nop
   addi $t1, $t1, 1 #guarda 1 en r9
+  nop
   beq $zero, $t1, b
-  addi $t1, $t1, 1124 #No se ejecuta xq t1 ya no es 0!!
+  addi $t1, $t1, 1124 #Si se ejecuta xq t1 ya no es 0!!
+  nop
+  nop
   b:
-  addi $t1, $t1, -1 #guarda 0 en r9
+  nop
+  addi $t1, $zero, 0 #guarda 0 en r9
   beq $t1, $zero, c #se ejecuta, dependencia de la instr anterior: t1 ya no es 1!!
   addi $t1, $t1, 1124 #No se ejecuta
-  addi $t1, $t1, 1124 #No se ejecuta
-  addi $t1, $t1, 1124 #No se ejecuta
+  nop
+  nop
   c: 
   nop
   nop
@@ -161,9 +184,10 @@ main:
   nop
   beq $t2, $t1, d #Salta, dependencia de una instruccion de hace dos ciclos
   addi $t1, $t1, 1124 #No se ejecuta
-  addi $t1, $t1, 1124 #No se ejecuta
-  addi $t1, $t1, 1124 #No se ejecuta
+  nop
   d:
+  nop
+  nop
   addi $t3, $zero, 4 #guarda 4 en r11
   nop
   nop
@@ -173,25 +197,25 @@ main:
   nop
   beq $t3, $t1, e #Salta, dependencia de una instruccion de hace dos ciclos
   addi $t1, $t1, 1124 #No se ejecuta
-  addi $t1, $t1, 1124 #No se ejecuta
-  addi $t1, $t1, 1124 #No se ejecuta
   e:
+  nop
+  nop
   nop
   addi $t3, $zero, 4 #guarda 4 en r11
   addi $t2, $zero, 4 #guarda 4 en r10
   beq $t3, $t2, f #Salta, dependencia las dos instrucciones anteriores
   addi $t1, $t1, 1124 #No se ejecuta
-  addi $t1, $t1, 1124 #No se ejecuta
-  addi $t1, $t1, 1124 #No se ejecuta
-  f:
-  addi $t3, $zero, 4 #guarda 8 en r11
-  addi $t2, $zero, 4 #guarda 8 en r10
   nop
+  nop
+  f:
+  nop
+  nop
+  addi $t3, $zero, 4 #guarda 4 en r11
+  addi $t2, $zero, 4 #guarda 4 en r10
+  nop 
   beq $t3, $t2, bucle #Salta, dependencia de dos instrucciones de hae un ciclo
   addi $t1, $t1, 1124 #No se ejecuta
-  addi $t1, $t1, 1124 #No se ejecuta
-  addi $t1, $t1, 1124 #No se ejecuta
-  bucle:
+   bucle:
   j bucle
   
   
@@ -199,4 +223,6 @@ main:
   
   
   
+   
+
    
