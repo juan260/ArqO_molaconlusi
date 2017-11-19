@@ -344,10 +344,7 @@ begin
 						
 	
 	pcnext <= (ifidpcmas4(31 downto 28) & jumpoffset(27 downto 0)) when jump = '1' else
-				 pc_aftermux;
-	
-	exmema3  <= idex2016 when idexex(1) = '0' else
-		idex1511;		
+				 pc_aftermux;	
 	
 	forwardMuxA2 <= result when forwardA2 = "00" else
 			exmemResult when forwardA2 = "01" else
@@ -380,6 +377,7 @@ begin
 			idex2016  <= (others => '0');
 			idex1511  <= (others => '0');
 			idex2521 <= (others => '0');
+ 			idexrd <= (others => '0');
 	
 			exmemwb <= (others => '0');
 			exmemm  <= (others => '0');
@@ -408,7 +406,7 @@ begin
 
 			-- En las 2 proximas sentencias el when else distingue
 			-- el caso donde se hace nop por hazard detection (idexmux = 0)
-			if idexmux = '1' then
+			if idexmux = '1' and branch = '0' then
 				idexwb <= memtoreg & we3;
 				idexm <= memread & memwrite;
 			else 
@@ -424,6 +422,7 @@ begin
 			idex2521 <= i_dataout(25 downto 21);
 			idex2016  <= i_dataout(20 downto 16);
 			idex1511  <= i_dataout(15 downto 11);
+			idexrd <= i_dataout(15 downto 11);
 			--idexpcjump <= ifidpcmas4(31 downto 28) & jumpoffset(27 downto 0);
 	
 			exmemwb <= idexwb;

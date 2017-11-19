@@ -55,14 +55,14 @@ architecture arqFor of ForwardingUnit is
 		 ForwardA2 <= "00" when ((idexRw = '1' and (idexRd /= 0)) and (idexRd = ifid2521)) else
 				"01" when ((exmemRegWrite = '1' and (exmemRd /= 0)) and (exmemRd = ifid2521)) else
 				"10"  when ((memwbRegWrite = '1' and (memwbRd /= 0)) and (memwbRd = ifid2521)) else
-				"00";
+				"11";
 
 		-- ForwardB2
 
 		 ForwardB2 <= "00" when (idexRw = '1' and (idexRd /= 0 and idexRd = ifid2016)) else
 				"01" when (exmemRegWrite = '1' and (exmemRd /= 0 and exmemRd = ifid2016)) else
 				"10"  when (memwbRegWrite = '1' and (memwbRd /= 0 and memwbRd = ifid2016)) else
-				"00";
+				"11";
 		
 
 end architecture;
