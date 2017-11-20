@@ -2,8 +2,9 @@
 
 # inicializar variables
 Ninicio=100
-Npaso=16
+Npaso=64
 Nfinal=$((Ninicio + 100))
+Niter=15
 fDAT=slow_fast_time.dat
 fPNG=slow_fast_time.png
 
@@ -15,18 +16,18 @@ touch $fDAT
 
 echo "Running slow and fast..."
 # bucle para N desde P hasta Q 
-#for N in $(seq $Ninicio $Npaso $Nfinal);
-for ((N = Ninicio ; N <= Nfinal ; N += Npaso)); do
+for Paso in $(seq 0 $NPaso 1024); do
+	N1=$Ninicio+$Paso
+	N2=($Ninicio+(($Paso+$NPaso)%1024))
 	echo "N: $N / $Nfinal..."
 	
 	# ejecutar los programas slow y fast consecutivamente con tamaño de matriz N
 	# para cada uno, filtrar la línea que contiene el tiempo y seleccionar la
 	# tercera columna (el valor del tiempo). Dejar los valores en variables
 	# para poder imprimirlos en la misma línea del fichero de datos
-	slowTime=$(./slow $N | grep 'time' | awk '{print $3}')
-	fastTime=$(./fast $N | grep 'time' | awk '{print $3}')
-
-	echo "$N	$slowTime	$fastTime" >> $fDAT
+	slowTime1=$(./slow $N | grep 'time' | awk '{print $3}')
+	fastTime2=$(./fast  $((($N+$Npaso)%$N)) | grep 'time' | awk '{print $3}')
+	echo "$N	$slowTime1	$fastTime1\n$N" >> $fDAT
 done
 
 echo "Generating plot..."
