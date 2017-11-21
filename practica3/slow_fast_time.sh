@@ -2,10 +2,10 @@
 
 # inicializar variables
 P=5
-Ninicio=$((10000+(1024*$P)))
+Ninicio=$((100+(1024*$P)))
 Nfinal=$(($Ninicio+1024))
 Npaso=64
-Niter=15
+Niter=5
 fDAT=slow_fast_time.dat
 fPNG=slow_fast_time.png
 
@@ -22,9 +22,9 @@ echo "Running slow and fast..."
 
 # array2 va 2 pasos por detras de array1. Reescribimos los 2 primeros eltos de array2 como los 2 ultimos de array1
 array1=($(seq $Ninicio $Npaso $Nfinal))
-array_fast=($(seq $($Ninicio-2*$Npaso) $Npaso $($Nfinal-2*$Npaso))
-array_fast[0]=$(($Nfinal-$NPaso))
-array_fast[1]=$Nfinal
+array2=($(seq $(($Ninicio-2*$Npaso)) $Npaso $(($Nfinal-2*$Npaso)) ))
+array2[0]=$( echo "scale = 5; $Nfinal - $Npaso" | bc -l )
+array2[1]=$Nfinal
 length=${#array1[@]}
 
 for iter in $(seq 1 1 $Niter)
@@ -36,21 +36,25 @@ do
         
         #Ejecutamos los 2
         slow=$(./slow   ${array1[$i]} | grep Execution | cut --delimiter=\  -f 3)
-        fast=$(./fast ${array_fast[$i]} | grep  Execution | cut --delimiter=\  -f 3)
+        fast=$(./fast ${array2[$i]} | grep  Execution | cut --delimiter=\  -f 3)
         #Y sumamos los datos a las medias guardadas en los arrays
-        slowTime[${array1[$i]}]+=$(bc <<< "sale = 5; $slow / $Niter ")
-        fastTime[${array_fast[$i]}]+=$(bc <<< "sale = 5; $fast / $Niter ")]
+        slowTime[${array1[$i]}]=$(echo "scale = 5; ${slowTime[${array1[$i]}]} +  $slow / $Niter " | bc -l)
+        fastTime[${array2[$i]}]=$(echo "scale = 5; ${fastTime[${array2[$i]}]} +  $fast / $Niter " | bc -l)
+#        slowTime[${array1[$i]}]+=$(echo "scale = 5; $slow / $Niter " | bc -l)
+#        fastTime[${array2[$i]}]+=$(echo "scale = 5; $fast / $Niter "| bc -l)
     done
 done 
 
-for key in "${!array1[@]}"
+for key in ${!slowTime[@]}
 do
-    echo "$key ${slowTime[$key]} ${fastTime[$key]}" >> $fDAT    
+  #echo "$key ${slowTime[$key]} ${fastTime[$key]}"  
+  echo "$key ${slowTime[$key]} ${fastTime[$key]}" >> $fDAT    
 done
 
 echo "Generating plot..."
 # llamar a gnuplot para generar el gráfico y pasarle directamente por la entrada
 # estándar el script que está entre "<< END_GNUPLOT" y "END_GNUPLOT"
+
 gnuplot << END_GNUPLOT
 set title "Slow-Fast Execution Time"
 set ylabel "Execution time (s)"
@@ -64,3 +68,4 @@ plot "$fDAT" using 1:2 with lines lw 2 title "slow", \
 replot
 quit
 END_GNUPLOT
+
