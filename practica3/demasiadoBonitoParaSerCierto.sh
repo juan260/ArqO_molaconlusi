@@ -46,18 +46,22 @@ done
 
 
 gnuplot << END_GNUPLOT
-set title "Slow-Fast read data cache misses"
+set title "Slow-Fast data cache misses"
 set ylabel "Misses"
 set xlabel "Matrix Size"
 set key right bottom
 set grid
 set term png
 set output "$fPNGlect"
-plot "cache_1024.dat" using 1:2 with lines lw 2 title "./slow with 1024B", \
-    "cache_2048.dat" using 1:2 with lines lw 2 title "./slow with 2048B", \
-    "cache_1024.dat" using 1:4 with lines lw 2 title ".fast with 1024B", \
-    "cache_2048.dat" using 1:4 with lines lw 2 title "./fast with 2048B" 
-    
+tamanio = 1024
+do for [i=1:$NTamanios] { 
+    datos = sprintf("cache_%d.dat", tamanio);
+    titulo1 = sprintf("slow, %d Bytes", tamanio);
+    titulo2 = sprintf("fast, %d Bytes", tamanio);
+    plot datos using 1:2 with lines lw 2 title titulo1, \
+    datos using 1:4 with lines lw 2 title titulo2
+    tamanio = tamanio * 2
+    }
 replot
 quit
 END_GNUPLOT
