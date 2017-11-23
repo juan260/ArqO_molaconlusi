@@ -1,11 +1,11 @@
 #/bin/bash
 
 # inicializar variables
-P=1
+P=3
 Ninicio=$((10000+(1024*$P)))
 Nfinal=$(($Ninicio+1024))
 Npaso=64
-Niter=15
+Niter=20
 fDAT=slow_fast_time.dat
 fPNG=slow_fast_time.png
 
@@ -13,7 +13,7 @@ declare -A slowTime
 declare -A fastTime
 
 # borrar el fichero DAT y el fichero PNG
-rm -f $fDAT fPNG
+rm -f $fDAT $fPNG
 
 # generar el fichero DAT vacío
 touch $fDAT
