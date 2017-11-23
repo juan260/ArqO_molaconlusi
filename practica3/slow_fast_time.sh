@@ -38,7 +38,8 @@ do
         slow=$(./slow   ${array1[$i]} | grep Execution | cut --delimiter=\  -f 3)
         fast=$(./fast ${array2[$i]} | grep  Execution | cut --delimiter=\  -f 3)
         #Y sumamos los datos a las medias guardadas en los arrays
-        slowTime[${array1[$i]}]=$(echo "scale = 5; ${slowTime[${array1[$i]}]} +  $slow / $Niter " | bc -l)
+        slowTime[${array1[$i]}]=$(echo "scale = 5; ${slowTime[${array1[$i]}]} +  ($slow / $Niter) " | bc -l)
+        echo "scale = 5; ${slowTime[${array1[$i]}]} +  ($slow / $Niter) "
         fastTime[${array2[$i]}]=$(echo "scale = 5; ${fastTime[${array2[$i]}]} +  $fast / $Niter " | bc -l)
 #        slowTime[${array1[$i]}]+=$(echo "scale = 5; $slow / $Niter " | bc -l)
 #        fastTime[${array2[$i]}]+=$(echo "scale = 5; $fast / $Niter "| bc -l)
