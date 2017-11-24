@@ -1,7 +1,7 @@
 #!/bin/bash
 # Script del ejercicio2
 
-# Inicializar variables
+# inicializar variables
 P=3
 Ninicio=$((2000+(1024*$P)))
 Nfinal=$(($Ninicio+1024))
