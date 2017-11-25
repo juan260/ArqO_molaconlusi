@@ -1,11 +1,11 @@
-#!/bin/bash
+#/bin/bash
 
 # inicializar variables
-P=5
-Ninicio=$((100+(1024*$P)))
+P=3
+Ninicio=$((10000+(1024*$P)))
 Nfinal=$(($Ninicio+1024))
 Npaso=64
-Niter=5
+Niter=20
 fDAT=slow_fast_time.dat
 fPNG=slow_fast_time.png
 
@@ -13,7 +13,7 @@ declare -A slowTime
 declare -A fastTime
 
 # borrar el fichero DAT y el fichero PNG
-rm -f $fDAT fPNG
+rm -f $fDAT $fPNG
 
 # generar el fichero DAT vacío
 touch $fDAT
@@ -26,6 +26,12 @@ array2=($(seq $(($Ninicio-2*$Npaso)) $Npaso $(($Nfinal-2*$Npaso)) ))
 array2[0]=$( echo "scale = 5; $Nfinal - $Npaso" | bc -l )
 array2[1]=$Nfinal
 length=${#array1[@]}
+
+for item in ${array1[@]}
+do
+	slowTime[$item]=0
+	fastTime[$item]=0
+done
 
 for iter in $(seq 1 1 $Niter)
 do
@@ -50,6 +56,8 @@ do
   #echo "$key ${slowTime[$key]} ${fastTime[$key]}"  
   echo "$key ${slowTime[$key]} ${fastTime[$key]}" >> $fDAT    
 done
+
+sort $fDAT -o $fDAT
 
 echo "Generating plot..."
 # llamar a gnuplot para generar el gráfico y pasarle directamente por la entrada
