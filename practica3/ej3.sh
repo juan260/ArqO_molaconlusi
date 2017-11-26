@@ -1,11 +1,11 @@
 #!/bin/bash
 # Script del ejercicio 3
 
-P=3
+P=1
 NInicio=$((256+(256*P)))
 NFinal=$(($NInicio+256))
 NPaso=16
-NRep=15
+NRep=1
 fDAT=mult.dat
 fPNG=mult.png
 declare -A normalTime
@@ -41,8 +41,8 @@ do
         echo "Subiteracion $i : array1 ${array1[$i]} array2 ${array2[$i]}"
         
         #Ejecutamos los 2
-        normal=$(./normal ${array1[$i]})
-        trasp=$(./trasp ${array2[$i]})
+        normal=$(./ej3 normal ${array1[$i]})
+        trasp=$(./ej3 traspuesta ${array2[$i]})
         #Y sumamos los datos a las medias guardadas en los arrays
         normalTime[${array1[$i]}]=$(echo "scale = 5; ${normalTime[${array1[$i]}]} +  $normal / $Niter " | bc -l)
         traspTime[${array2[$i]}]=$(echo "scale = 5; ${traspTime[${array2[$i]}]} +  $trasp / $Niter " | bc -l)

@@ -48,7 +48,7 @@ int main( int argc, char *argv[])
 
 tipo compute(tipo **matrix,int n)
 {
-	tipo sum;
+	tipo sum = 0.0;;
 	int i,j;
 	
 	for(i=0;i<n;i++)
