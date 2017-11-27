@@ -1,0 +1,1660 @@
+-----------------------------Ejecutando ejercicio 1
+
+
+Running slow and fast...
+Iteracion numero 1
+Subiteracion 0 : array1 13072 array2 14032
+Subiteracion 1 : array1 13136 array2 14096
+Subiteracion 2 : array1 13200 array2 13072
+Subiteracion 3 : array1 13264 array2 13136
+Subiteracion 4 : array1 13328 array2 13200
+Subiteracion 5 : array1 13392 array2 13264
+Subiteracion 6 : array1 13456 array2 13328
+Subiteracion 7 : array1 13520 array2 13392
+Subiteracion 8 : array1 13584 array2 13456
+Subiteracion 9 : array1 13648 array2 13520
+Subiteracion 10 : array1 13712 array2 13584
+Subiteracion 11 : array1 13776 array2 13648
+Subiteracion 12 : array1 13840 array2 13712
+Subiteracion 13 : array1 13904 array2 13776
+Subiteracion 14 : array1 13968 array2 13840
+Subiteracion 15 : array1 14032 array2 13904
+Subiteracion 16 : array1 14096 array2 13968
+Iteracion numero 2
+Subiteracion 0 : array1 13072 array2 14032
+Subiteracion 1 : array1 13136 array2 14096
+Subiteracion 2 : array1 13200 array2 13072
+Subiteracion 3 : array1 13264 array2 13136
+Subiteracion 4 : array1 13328 array2 13200
+Subiteracion 5 : array1 13392 array2 13264
+Subiteracion 6 : array1 13456 array2 13328
+Subiteracion 7 : array1 13520 array2 13392
+Subiteracion 8 : array1 13584 array2 13456
+Subiteracion 9 : array1 13648 array2 13520
+Subiteracion 10 : array1 13712 array2 13584
+Subiteracion 11 : array1 13776 array2 13648
+Subiteracion 12 : array1 13840 array2 13712
+Subiteracion 13 : array1 13904 array2 13776
+Subiteracion 14 : array1 13968 array2 13840
+Subiteracion 15 : array1 14032 array2 13904
+Subiteracion 16 : array1 14096 array2 13968
+Iteracion numero 3
+Subiteracion 0 : array1 13072 array2 14032
+Subiteracion 1 : array1 13136 array2 14096
+Subiteracion 2 : array1 13200 array2 13072
+Subiteracion 3 : array1 13264 array2 13136
+Subiteracion 4 : array1 13328 array2 13200
+Subiteracion 5 : array1 13392 array2 13264
+Subiteracion 6 : array1 13456 array2 13328
+Subiteracion 7 : array1 13520 array2 13392
+Subiteracion 8 : array1 13584 array2 13456
+Subiteracion 9 : array1 13648 array2 13520
+Subiteracion 10 : array1 13712 array2 13584
+Subiteracion 11 : array1 13776 array2 13648
+Subiteracion 12 : array1 13840 array2 13712
+Subiteracion 13 : array1 13904 array2 13776
+Subiteracion 14 : array1 13968 array2 13840
+Subiteracion 15 : array1 14032 array2 13904
+Subiteracion 16 : array1 14096 array2 13968
+Iteracion numero 4
+Subiteracion 0 : array1 13072 array2 14032
+Subiteracion 1 : array1 13136 array2 14096
+Subiteracion 2 : array1 13200 array2 13072
+Subiteracion 3 : array1 13264 array2 13136
+Subiteracion 4 : array1 13328 array2 13200
+Subiteracion 5 : array1 13392 array2 13264
+Subiteracion 6 : array1 13456 array2 13328
+Subiteracion 7 : array1 13520 array2 13392
+Subiteracion 8 : array1 13584 array2 13456
+Subiteracion 9 : array1 13648 array2 13520
+Subiteracion 10 : array1 13712 array2 13584
+Subiteracion 11 : array1 13776 array2 13648
+Subiteracion 12 : array1 13840 array2 13712
+Subiteracion 13 : array1 13904 array2 13776
+Subiteracion 14 : array1 13968 array2 13840
+Subiteracion 15 : array1 14032 array2 13904
+Subiteracion 16 : array1 14096 array2 13968
+Iteracion numero 5
+Subiteracion 0 : array1 13072 array2 14032
+Subiteracion 1 : array1 13136 array2 14096
+Subiteracion 2 : array1 13200 array2 13072
+Subiteracion 3 : array1 13264 array2 13136
+Subiteracion 4 : array1 13328 array2 13200
+Subiteracion 5 : array1 13392 array2 13264
+Subiteracion 6 : array1 13456 array2 13328
+Subiteracion 7 : array1 13520 array2 13392
+Subiteracion 8 : array1 13584 array2 13456
+Subiteracion 9 : array1 13648 array2 13520
+Subiteracion 10 : array1 13712 array2 13584
+Subiteracion 11 : array1 13776 array2 13648
+Subiteracion 12 : array1 13840 array2 13712
+Subiteracion 13 : array1 13904 array2 13776
+Subiteracion 14 : array1 13968 array2 13840
+Subiteracion 15 : array1 14032 array2 13904
+Subiteracion 16 : array1 14096 array2 13968
+Iteracion numero 6
+Subiteracion 0 : array1 13072 array2 14032
+Subiteracion 1 : array1 13136 array2 14096
+Subiteracion 2 : array1 13200 array2 13072
+Subiteracion 3 : array1 13264 array2 13136
+Subiteracion 4 : array1 13328 array2 13200
+Subiteracion 5 : array1 13392 array2 13264
+Subiteracion 6 : array1 13456 array2 13328
+Subiteracion 7 : array1 13520 array2 13392
+Subiteracion 8 : array1 13584 array2 13456
+Subiteracion 9 : array1 13648 array2 13520
+Subiteracion 10 : array1 13712 array2 13584
+Subiteracion 11 : array1 13776 array2 13648
+Subiteracion 12 : array1 13840 array2 13712
+Subiteracion 13 : array1 13904 array2 13776
+Subiteracion 14 : array1 13968 array2 13840
+Subiteracion 15 : array1 14032 array2 13904
+Subiteracion 16 : array1 14096 array2 13968
+Iteracion numero 7
+Subiteracion 0 : array1 13072 array2 14032
+Subiteracion 1 : array1 13136 array2 14096
+Subiteracion 2 : array1 13200 array2 13072
+Subiteracion 3 : array1 13264 array2 13136
+Subiteracion 4 : array1 13328 array2 13200
+Subiteracion 5 : array1 13392 array2 13264
+Subiteracion 6 : array1 13456 array2 13328
+Subiteracion 7 : array1 13520 array2 13392
+Subiteracion 8 : array1 13584 array2 13456
+Subiteracion 9 : array1 13648 array2 13520
+Subiteracion 10 : array1 13712 array2 13584
+Subiteracion 11 : array1 13776 array2 13648
+Subiteracion 12 : array1 13840 array2 13712
+Subiteracion 13 : array1 13904 array2 13776
+Subiteracion 14 : array1 13968 array2 13840
+Subiteracion 15 : array1 14032 array2 13904
+Subiteracion 16 : array1 14096 array2 13968
+Iteracion numero 8
+Subiteracion 0 : array1 13072 array2 14032
+Subiteracion 1 : array1 13136 array2 14096
+Subiteracion 2 : array1 13200 array2 13072
+Subiteracion 3 : array1 13264 array2 13136
+Subiteracion 4 : array1 13328 array2 13200
+Subiteracion 5 : array1 13392 array2 13264
+Subiteracion 6 : array1 13456 array2 13328
+Subiteracion 7 : array1 13520 array2 13392
+Subiteracion 8 : array1 13584 array2 13456
+Subiteracion 9 : array1 13648 array2 13520
+Subiteracion 10 : array1 13712 array2 13584
+Subiteracion 11 : array1 13776 array2 13648
+Subiteracion 12 : array1 13840 array2 13712
+Subiteracion 13 : array1 13904 array2 13776
+Subiteracion 14 : array1 13968 array2 13840
+Subiteracion 15 : array1 14032 array2 13904
+Subiteracion 16 : array1 14096 array2 13968
+Iteracion numero 9
+Subiteracion 0 : array1 13072 array2 14032
+Subiteracion 1 : array1 13136 array2 14096
+Subiteracion 2 : array1 13200 array2 13072
+Subiteracion 3 : array1 13264 array2 13136
+Subiteracion 4 : array1 13328 array2 13200
+Subiteracion 5 : array1 13392 array2 13264
+Subiteracion 6 : array1 13456 array2 13328
+Subiteracion 7 : array1 13520 array2 13392
+Subiteracion 8 : array1 13584 array2 13456
+Subiteracion 9 : array1 13648 array2 13520
+Subiteracion 10 : array1 13712 array2 13584
+Subiteracion 11 : array1 13776 array2 13648
+Subiteracion 12 : array1 13840 array2 13712
+Subiteracion 13 : array1 13904 array2 13776
+Subiteracion 14 : array1 13968 array2 13840
+Subiteracion 15 : array1 14032 array2 13904
+Subiteracion 16 : array1 14096 array2 13968
+Iteracion numero 10
+Subiteracion 0 : array1 13072 array2 14032
+Subiteracion 1 : array1 13136 array2 14096
+Subiteracion 2 : array1 13200 array2 13072
+Subiteracion 3 : array1 13264 array2 13136
+Subiteracion 4 : array1 13328 array2 13200
+Subiteracion 5 : array1 13392 array2 13264
+Subiteracion 6 : array1 13456 array2 13328
+Subiteracion 7 : array1 13520 array2 13392
+Subiteracion 8 : array1 13584 array2 13456
+Subiteracion 9 : array1 13648 array2 13520
+Subiteracion 10 : array1 13712 array2 13584
+Subiteracion 11 : array1 13776 array2 13648
+Subiteracion 12 : array1 13840 array2 13712
+Subiteracion 13 : array1 13904 array2 13776
+Subiteracion 14 : array1 13968 array2 13840
+Subiteracion 15 : array1 14032 array2 13904
+Subiteracion 16 : array1 14096 array2 13968
+Iteracion numero 11
+Subiteracion 0 : array1 13072 array2 14032
+Subiteracion 1 : array1 13136 array2 14096
+Subiteracion 2 : array1 13200 array2 13072
+Subiteracion 3 : array1 13264 array2 13136
+Subiteracion 4 : array1 13328 array2 13200
+Subiteracion 5 : array1 13392 array2 13264
+Subiteracion 6 : array1 13456 array2 13328
+Subiteracion 7 : array1 13520 array2 13392
+Subiteracion 8 : array1 13584 array2 13456
+Subiteracion 9 : array1 13648 array2 13520
+Subiteracion 10 : array1 13712 array2 13584
+Subiteracion 11 : array1 13776 array2 13648
+Subiteracion 12 : array1 13840 array2 13712
+Subiteracion 13 : array1 13904 array2 13776
+Subiteracion 14 : array1 13968 array2 13840
+Subiteracion 15 : array1 14032 array2 13904
+Subiteracion 16 : array1 14096 array2 13968
+Iteracion numero 12
+Subiteracion 0 : array1 13072 array2 14032
+Subiteracion 1 : array1 13136 array2 14096
+Subiteracion 2 : array1 13200 array2 13072
+Subiteracion 3 : array1 13264 array2 13136
+Subiteracion 4 : array1 13328 array2 13200
+Subiteracion 5 : array1 13392 array2 13264
+Subiteracion 6 : array1 13456 array2 13328
+Subiteracion 7 : array1 13520 array2 13392
+Subiteracion 8 : array1 13584 array2 13456
+Subiteracion 9 : array1 13648 array2 13520
+Subiteracion 10 : array1 13712 array2 13584
+Subiteracion 11 : array1 13776 array2 13648
+Subiteracion 12 : array1 13840 array2 13712
+Subiteracion 13 : array1 13904 array2 13776
+Subiteracion 14 : array1 13968 array2 13840
+Subiteracion 15 : array1 14032 array2 13904
+Subiteracion 16 : array1 14096 array2 13968
+Iteracion numero 13
+Subiteracion 0 : array1 13072 array2 14032
+Subiteracion 1 : array1 13136 array2 14096
+Subiteracion 2 : array1 13200 array2 13072
+Subiteracion 3 : array1 13264 array2 13136
+Subiteracion 4 : array1 13328 array2 13200
+Subiteracion 5 : array1 13392 array2 13264
+Subiteracion 6 : array1 13456 array2 13328
+Subiteracion 7 : array1 13520 array2 13392
+Subiteracion 8 : array1 13584 array2 13456
+Subiteracion 9 : array1 13648 array2 13520
+Subiteracion 10 : array1 13712 array2 13584
+Subiteracion 11 : array1 13776 array2 13648
+Subiteracion 12 : array1 13840 array2 13712
+Subiteracion 13 : array1 13904 array2 13776
+Subiteracion 14 : array1 13968 array2 13840
+Subiteracion 15 : array1 14032 array2 13904
+Subiteracion 16 : array1 14096 array2 13968
+Iteracion numero 14
+Subiteracion 0 : array1 13072 array2 14032
+Subiteracion 1 : array1 13136 array2 14096
+Subiteracion 2 : array1 13200 array2 13072
+Subiteracion 3 : array1 13264 array2 13136
+Subiteracion 4 : array1 13328 array2 13200
+Subiteracion 5 : array1 13392 array2 13264
+Subiteracion 6 : array1 13456 array2 13328
+Subiteracion 7 : array1 13520 array2 13392
+Subiteracion 8 : array1 13584 array2 13456
+Subiteracion 9 : array1 13648 array2 13520
+Subiteracion 10 : array1 13712 array2 13584
+Subiteracion 11 : array1 13776 array2 13648
+Subiteracion 12 : array1 13840 array2 13712
+Subiteracion 13 : array1 13904 array2 13776
+Subiteracion 14 : array1 13968 array2 13840
+Subiteracion 15 : array1 14032 array2 13904
+Subiteracion 16 : array1 14096 array2 13968
+Iteracion numero 15
+Subiteracion 0 : array1 13072 array2 14032
+Subiteracion 1 : array1 13136 array2 14096
+Subiteracion 2 : array1 13200 array2 13072
+Subiteracion 3 : array1 13264 array2 13136
+Subiteracion 4 : array1 13328 array2 13200
+Subiteracion 5 : array1 13392 array2 13264
+Subiteracion 6 : array1 13456 array2 13328
+Subiteracion 7 : array1 13520 array2 13392
+Subiteracion 8 : array1 13584 array2 13456
+Subiteracion 9 : array1 13648 array2 13520
+Subiteracion 10 : array1 13712 array2 13584
+Subiteracion 11 : array1 13776 array2 13648
+Subiteracion 12 : array1 13840 array2 13712
+Subiteracion 13 : array1 13904 array2 13776
+Subiteracion 14 : array1 13968 array2 13840
+Subiteracion 15 : array1 14032 array2 13904
+Subiteracion 16 : array1 14096 array2 13968
+Iteracion numero 16
+Subiteracion 0 : array1 13072 array2 14032
+Subiteracion 1 : array1 13136 array2 14096
+Subiteracion 2 : array1 13200 array2 13072
+Subiteracion 3 : array1 13264 array2 13136
+Subiteracion 4 : array1 13328 array2 13200
+Subiteracion 5 : array1 13392 array2 13264
+Subiteracion 6 : array1 13456 array2 13328
+Subiteracion 7 : array1 13520 array2 13392
+Subiteracion 8 : array1 13584 array2 13456
+Subiteracion 9 : array1 13648 array2 13520
+Subiteracion 10 : array1 13712 array2 13584
+Subiteracion 11 : array1 13776 array2 13648
+Subiteracion 12 : array1 13840 array2 13712
+Subiteracion 13 : array1 13904 array2 13776
+Subiteracion 14 : array1 13968 array2 13840
+Subiteracion 15 : array1 14032 array2 13904
+Subiteracion 16 : array1 14096 array2 13968
+Iteracion numero 17
+Subiteracion 0 : array1 13072 array2 14032
+Subiteracion 1 : array1 13136 array2 14096
+Subiteracion 2 : array1 13200 array2 13072
+Subiteracion 3 : array1 13264 array2 13136
+Subiteracion 4 : array1 13328 array2 13200
+Subiteracion 5 : array1 13392 array2 13264
+Subiteracion 6 : array1 13456 array2 13328
+Subiteracion 7 : array1 13520 array2 13392
+Subiteracion 8 : array1 13584 array2 13456
+Subiteracion 9 : array1 13648 array2 13520
+Subiteracion 10 : array1 13712 array2 13584
+Subiteracion 11 : array1 13776 array2 13648
+Subiteracion 12 : array1 13840 array2 13712
+Subiteracion 13 : array1 13904 array2 13776
+Subiteracion 14 : array1 13968 array2 13840
+Subiteracion 15 : array1 14032 array2 13904
+Subiteracion 16 : array1 14096 array2 13968
+Iteracion numero 18
+Subiteracion 0 : array1 13072 array2 14032
+Subiteracion 1 : array1 13136 array2 14096
+Subiteracion 2 : array1 13200 array2 13072
+Subiteracion 3 : array1 13264 array2 13136
+Subiteracion 4 : array1 13328 array2 13200
+Subiteracion 5 : array1 13392 array2 13264
+Subiteracion 6 : array1 13456 array2 13328
+Subiteracion 7 : array1 13520 array2 13392
+Subiteracion 8 : array1 13584 array2 13456
+Subiteracion 9 : array1 13648 array2 13520
+Subiteracion 10 : array1 13712 array2 13584
+Subiteracion 11 : array1 13776 array2 13648
+Subiteracion 12 : array1 13840 array2 13712
+Subiteracion 13 : array1 13904 array2 13776
+Subiteracion 14 : array1 13968 array2 13840
+Subiteracion 15 : array1 14032 array2 13904
+Subiteracion 16 : array1 14096 array2 13968
+Iteracion numero 19
+Subiteracion 0 : array1 13072 array2 14032
+Subiteracion 1 : array1 13136 array2 14096
+Subiteracion 2 : array1 13200 array2 13072
+Subiteracion 3 : array1 13264 array2 13136
+Subiteracion 4 : array1 13328 array2 13200
+Subiteracion 5 : array1 13392 array2 13264
+Subiteracion 6 : array1 13456 array2 13328
+Subiteracion 7 : array1 13520 array2 13392
+Subiteracion 8 : array1 13584 array2 13456
+Subiteracion 9 : array1 13648 array2 13520
+Subiteracion 10 : array1 13712 array2 13584
+Subiteracion 11 : array1 13776 array2 13648
+Subiteracion 12 : array1 13840 array2 13712
+Subiteracion 13 : array1 13904 array2 13776
+Subiteracion 14 : array1 13968 array2 13840
+Subiteracion 15 : array1 14032 array2 13904
+Subiteracion 16 : array1 14096 array2 13968
+Iteracion numero 20
+Subiteracion 0 : array1 13072 array2 14032
+Subiteracion 1 : array1 13136 array2 14096
+Subiteracion 2 : array1 13200 array2 13072
+Subiteracion 3 : array1 13264 array2 13136
+Subiteracion 4 : array1 13328 array2 13200
+Subiteracion 5 : array1 13392 array2 13264
+Subiteracion 6 : array1 13456 array2 13328
+Subiteracion 7 : array1 13520 array2 13392
+Subiteracion 8 : array1 13584 array2 13456
+Subiteracion 9 : array1 13648 array2 13520
+Subiteracion 10 : array1 13712 array2 13584
+Subiteracion 11 : array1 13776 array2 13648
+Subiteracion 12 : array1 13840 array2 13712
+Subiteracion 13 : array1 13904 array2 13776
+Subiteracion 14 : array1 13968 array2 13840
+Subiteracion 15 : array1 14032 array2 13904
+Subiteracion 16 : array1 14096 array2 13968
+Generating plot...
+
+
+-----------------------------Ejecutando ejercicio 2
+
+
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5072 y tamaño de cache 1024...
+--11423-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.737734
+Total: 128620930.075639
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5072 y tamaño de cache 1024...
+--11426-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.245748
+Total: 128620930.075623
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5072 y tamaño de cache 2048...
+--11444-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.599395
+Total: 128620930.075639
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5072 y tamaño de cache 2048...
+--11449-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.174245
+Total: 128620930.075623
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5072 y tamaño de cache 4096...
+--11464-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.608413
+Total: 128620930.075639
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5072 y tamaño de cache 4096...
+--11466-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.164961
+Total: 128620930.075623
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5072 y tamaño de cache 8192...
+--11484-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.522641
+Total: 128620930.075639
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5072 y tamaño de cache 8192...
+--11486-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.156405
+Total: 128620930.075623
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5136 y tamaño de cache 1024...
+--11503-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.684576
+Total: 131882592.986677
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5136 y tamaño de cache 1024...
+--11505-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.297043
+Total: 131882592.986704
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5136 y tamaño de cache 2048...
+--11522-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.621379
+Total: 131882592.986677
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5136 y tamaño de cache 2048...
+--11526-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.245572
+Total: 131882592.986704
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5136 y tamaño de cache 4096...
+--11541-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.612954
+Total: 131882592.986677
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5136 y tamaño de cache 4096...
+--11542-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.235996
+Total: 131882592.986704
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5136 y tamaño de cache 8192...
+--11557-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.698600
+Total: 131882592.986677
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5136 y tamaño de cache 8192...
+--11561-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.219869
+Total: 131882592.986704
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5200 y tamaño de cache 1024...
+--11577-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.765211
+Total: 135191987.668875
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5200 y tamaño de cache 1024...
+--11579-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.035738
+Total: 135191987.668868
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5200 y tamaño de cache 2048...
+--11594-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.726608
+Total: 135191987.668875
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5200 y tamaño de cache 2048...
+--11598-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 1.989008
+Total: 135191987.668868
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5200 y tamaño de cache 4096...
+--11650-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.662174
+Total: 135191987.668875
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5200 y tamaño de cache 4096...
+--11655-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 1.965290
+Total: 135191987.668868
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5200 y tamaño de cache 8192...
+--11670-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.659134
+Total: 135191987.668875
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5200 y tamaño de cache 8192...
+--11672-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 1.957247
+Total: 135191987.668868
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5264 y tamaño de cache 1024...
+--11692-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.834161
+Total: 138538899.025176
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5264 y tamaño de cache 1024...
+--11694-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.411616
+Total: 138538899.025170
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5264 y tamaño de cache 2048...
+--11711-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.720292
+Total: 138538899.025176
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5264 y tamaño de cache 2048...
+--11713-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.353845
+Total: 138538899.025170
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5264 y tamaño de cache 4096...
+--11730-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.766764
+Total: 138538899.025176
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5264 y tamaño de cache 4096...
+--11732-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.325620
+Total: 138538899.025170
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5264 y tamaño de cache 8192...
+--11746-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.746685
+Total: 138538899.025176
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5264 y tamaño de cache 8192...
+--11749-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.320577
+Total: 138538899.025170
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5328 y tamaño de cache 1024...
+--11767-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.956512
+Total: 141930676.215149
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5328 y tamaño de cache 1024...
+--11769-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.462607
+Total: 141930676.215158
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5328 y tamaño de cache 2048...
+--11786-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.919592
+Total: 141930676.215149
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5328 y tamaño de cache 2048...
+--11788-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.408557
+Total: 141930676.215158
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5328 y tamaño de cache 4096...
+--11809-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.937541
+Total: 141930676.215149
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5328 y tamaño de cache 4096...
+--11811-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.386631
+Total: 141930676.215158
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5328 y tamaño de cache 8192...
+--11826-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.790805
+Total: 141930676.215149
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5328 y tamaño de cache 8192...
+--11828-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.467653
+Total: 141930676.215158
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5392 y tamaño de cache 1024...
+--11847-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.921633
+Total: 145358501.810122
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5392 y tamaño de cache 1024...
+--11884-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.531162
+Total: 145358501.810122
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5392 y tamaño de cache 2048...
+--11901-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.894086
+Total: 145358501.810122
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5392 y tamaño de cache 2048...
+--11905-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.476559
+Total: 145358501.810122
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5392 y tamaño de cache 4096...
+--11920-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.028643
+Total: 145358501.810122
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5392 y tamaño de cache 4096...
+--11922-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.448484
+Total: 145358501.810122
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5392 y tamaño de cache 8192...
+--11937-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.861724
+Total: 145358501.810122
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5392 y tamaño de cache 8192...
+--11941-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.450187
+Total: 145358501.810122
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5456 y tamaño de cache 1024...
+--11957-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.041566
+Total: 148834087.052886
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5456 y tamaño de cache 1024...
+--11959-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.584154
+Total: 148834087.052927
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5456 y tamaño de cache 2048...
+--11976-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.906760
+Total: 148834087.052886
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5456 y tamaño de cache 2048...
+--11980-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.530177
+Total: 148834087.052927
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5456 y tamaño de cache 4096...
+--11998-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.939599
+Total: 148834087.052886
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5456 y tamaño de cache 4096...
+--12000-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.510889
+Total: 148834087.052927
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5456 y tamaño de cache 8192...
+--12016-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.920019
+Total: 148834087.052886
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5456 y tamaño de cache 8192...
+--12021-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.499521
+Total: 148834087.052927
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5520 y tamaño de cache 1024...
+--12038-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.106233
+Total: 152345418.601907
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5520 y tamaño de cache 1024...
+--12040-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.276395
+Total: 152345418.601925
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5520 y tamaño de cache 2048...
+--12057-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.232620
+Total: 152345418.601907
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5520 y tamaño de cache 2048...
+--12096-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.260504
+Total: 152345418.601925
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5520 y tamaño de cache 4096...
+--12112-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.127232
+Total: 152345418.601907
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5520 y tamaño de cache 4096...
+--12114-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.222483
+Total: 152345418.601925
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5520 y tamaño de cache 8192...
+--12139-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.132030
+Total: 152345418.601907
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5520 y tamaño de cache 8192...
+--12143-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.261686
+Total: 152345418.601925
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5584 y tamaño de cache 1024...
+--12161-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.128881
+Total: 155898197.111298
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5584 y tamaño de cache 1024...
+--12163-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.731578
+Total: 155898197.111351
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5584 y tamaño de cache 2048...
+--12188-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.180704
+Total: 155898197.111298
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5584 y tamaño de cache 2048...
+--12190-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.635605
+Total: 155898197.111351
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5584 y tamaño de cache 4096...
+--12207-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.077364
+Total: 155898197.111298
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5584 y tamaño de cache 4096...
+--12210-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.650442
+Total: 155898197.111351
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5584 y tamaño de cache 8192...
+--12229-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.059760
+Total: 155898197.111298
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5584 y tamaño de cache 8192...
+--12231-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.611532
+Total: 155898197.111351
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5648 y tamaño de cache 1024...
+--12249-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.463302
+Total: 159495522.358479
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5648 y tamaño de cache 1024...
+--12253-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.798985
+Total: 159495522.358514
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5648 y tamaño de cache 2048...
+--12273-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.191191
+Total: 159495522.358479
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5648 y tamaño de cache 2048...
+--12276-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.818377
+Total: 159495522.358514
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5648 y tamaño de cache 4096...
+--12293-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.448077
+Total: 159495522.358479
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5648 y tamaño de cache 4096...
+--12334-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.718897
+Total: 159495522.358514
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5648 y tamaño de cache 8192...
+--12353-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.258941
+Total: 159495522.358479
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5648 y tamaño de cache 8192...
+--12355-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.684178
+Total: 159495522.358514
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5712 y tamaño de cache 1024...
+--12375-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.366710
+Total: 163131267.369021
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5712 y tamaño de cache 1024...
+--12379-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.832794
+Total: 163131267.369029
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5712 y tamaño de cache 2048...
+--12396-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.378755
+Total: 163131267.369021
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5712 y tamaño de cache 2048...
+--12400-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.762997
+Total: 163131267.369029
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5712 y tamaño de cache 4096...
+--12417-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.237098
+Total: 163131267.369021
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5712 y tamaño de cache 4096...
+--12420-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.747536
+Total: 163131267.369029
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5712 y tamaño de cache 8192...
+--12437-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.221518
+Total: 163131267.369021
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5712 y tamaño de cache 8192...
+--12441-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.747910
+Total: 163131267.369029
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5776 y tamaño de cache 1024...
+--12459-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.380116
+Total: 166811678.099573
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5776 y tamaño de cache 1024...
+--12461-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.911183
+Total: 166811678.099549
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5776 y tamaño de cache 2048...
+--12480-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.331565
+Total: 166811678.099573
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5776 y tamaño de cache 2048...
+--12482-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.835272
+Total: 166811678.099549
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5776 y tamaño de cache 4096...
+--12499-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.323203
+Total: 166811678.099573
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5776 y tamaño de cache 4096...
+--12502-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.898502
+Total: 166811678.099549
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5776 y tamaño de cache 8192...
+--12556-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.453397
+Total: 166811678.099573
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5776 y tamaño de cache 8192...
+--12560-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.798850
+Total: 166811678.099549
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5840 y tamaño de cache 1024...
+--12578-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.567719
+Total: 170530545.626150
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5840 y tamaño de cache 1024...
+--12582-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.977645
+Total: 170530545.626148
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5840 y tamaño de cache 2048...
+--12599-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.391250
+Total: 170530545.626150
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5840 y tamaño de cache 2048...
+--12601-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.889817
+Total: 170530545.626148
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5840 y tamaño de cache 4096...
+--12621-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.413034
+Total: 170530545.626150
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5840 y tamaño de cache 4096...
+--12626-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.864066
+Total: 170530545.626148
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5840 y tamaño de cache 8192...
+--12643-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.538955
+Total: 170530545.626150
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5840 y tamaño de cache 8192...
+--12646-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.875845
+Total: 170530545.626148
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5904 y tamaño de cache 1024...
+--12666-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.692663
+Total: 174289436.786056
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5904 y tamaño de cache 1024...
+--12668-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.055346
+Total: 174289436.786025
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5904 y tamaño de cache 2048...
+--12686-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.477993
+Total: 174289436.786056
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5904 y tamaño de cache 2048...
+--12692-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.972363
+Total: 174289436.786025
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5904 y tamaño de cache 4096...
+--12709-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.488534
+Total: 174289436.786056
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5904 y tamaño de cache 4096...
+--12711-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.949893
+Total: 174289436.786025
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5904 y tamaño de cache 8192...
+--12730-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.588953
+Total: 174289436.786056
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5904 y tamaño de cache 8192...
+--12767-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.937870
+Total: 174289436.786025
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5968 y tamaño de cache 1024...
+--12785-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.487669
+Total: 178091335.111388
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5968 y tamaño de cache 1024...
+--12790-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.110807
+Total: 178091335.111401
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5968 y tamaño de cache 2048...
+--12809-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.432640
+Total: 178091335.111388
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5968 y tamaño de cache 2048...
+--12811-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.024155
+Total: 178091335.111401
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5968 y tamaño de cache 4096...
+--12830-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.432838
+Total: 178091335.111388
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5968 y tamaño de cache 4096...
+--12833-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.996715
+Total: 178091335.111401
+
+Ejecutando valgrind para ./slow, tamaño de matriz 5968 y tamaño de cache 8192...
+--12850-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.547109
+Total: 178091335.111388
+
+Ejecutando valgrind para ./fast, tamaño de matriz 5968 y tamaño de cache 8192...
+--12852-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 2.980419
+Total: 178091335.111401
+
+Ejecutando valgrind para ./slow, tamaño de matriz 6032 y tamaño de cache 1024...
+--12875-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.786914
+Total: 181931625.168353
+
+Ejecutando valgrind para ./fast, tamaño de matriz 6032 y tamaño de cache 1024...
+--12877-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.161544
+Total: 181931625.168364
+
+Ejecutando valgrind para ./slow, tamaño de matriz 6032 y tamaño de cache 2048...
+--12898-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.722818
+Total: 181931625.168353
+
+Ejecutando valgrind para ./fast, tamaño de matriz 6032 y tamaño de cache 2048...
+--12900-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.090433
+Total: 181931625.168364
+
+Ejecutando valgrind para ./slow, tamaño de matriz 6032 y tamaño de cache 4096...
+--12916-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.659692
+Total: 181931625.168353
+
+Ejecutando valgrind para ./fast, tamaño de matriz 6032 y tamaño de cache 4096...
+--12918-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.056466
+Total: 181931625.168364
+
+Ejecutando valgrind para ./slow, tamaño de matriz 6032 y tamaño de cache 8192...
+--12972-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.620374
+Total: 181931625.168353
+
+Ejecutando valgrind para ./fast, tamaño de matriz 6032 y tamaño de cache 8192...
+--12977-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.060993
+Total: 181931625.168364
+
+Ejecutando valgrind para ./slow, tamaño de matriz 6096 y tamaño de cache 1024...
+--12995-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.722633
+Total: 185813899.613804
+
+Ejecutando valgrind para ./fast, tamaño de matriz 6096 y tamaño de cache 1024...
+--12999-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.251330
+Total: 185813899.613854
+
+Ejecutando valgrind para ./slow, tamaño de matriz 6096 y tamaño de cache 2048...
+--13017-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.682162
+Total: 185813899.613804
+
+Ejecutando valgrind para ./fast, tamaño de matriz 6096 y tamaño de cache 2048...
+--13019-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.140501
+Total: 185813899.613854
+
+Ejecutando valgrind para ./slow, tamaño de matriz 6096 y tamaño de cache 4096...
+--13038-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.735924
+Total: 185813899.613804
+
+Ejecutando valgrind para ./fast, tamaño de matriz 6096 y tamaño de cache 4096...
+--13040-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.124795
+Total: 185813899.613854
+
+Ejecutando valgrind para ./slow, tamaño de matriz 6096 y tamaño de cache 8192...
+--13058-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.671343
+Total: 185813899.613804
+
+Ejecutando valgrind para ./fast, tamaño de matriz 6096 y tamaño de cache 8192...
+--13063-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 3.137897
+Total: 185813899.613854
+
+
+-----------------------------Ejecutando ejercicio 3
+
+
+Running normal and trasp...
+Midiendo los tiempos (por separado de los de los valgrinds para que no se afecten mutuamente)
+Iteracion numero 1
+Subiteracion 0 : array1 1024 array2 1264
+Subiteracion 1 : array1 1040 array2 1280
+Subiteracion 2 : array1 1056 array2 1024
+Subiteracion 3 : array1 1072 array2 1040
+Subiteracion 4 : array1 1088 array2 1056
+Subiteracion 5 : array1 1104 array2 1072
+Subiteracion 6 : array1 1120 array2 1088
+Subiteracion 7 : array1 1136 array2 1104
+Subiteracion 8 : array1 1152 array2 1120
+Subiteracion 9 : array1 1168 array2 1136
+Subiteracion 10 : array1 1184 array2 1152
+Subiteracion 11 : array1 1200 array2 1168
+Subiteracion 12 : array1 1216 array2 1184
+Subiteracion 13 : array1 1232 array2 1200
+Subiteracion 14 : array1 1248 array2 1216
+Subiteracion 15 : array1 1264 array2 1232
+Subiteracion 16 : array1 1280 array2 1248
+Iteracion numero 2
+Subiteracion 0 : array1 1024 array2 1264
+Subiteracion 1 : array1 1040 array2 1280
+Subiteracion 2 : array1 1056 array2 1024
+Subiteracion 3 : array1 1072 array2 1040
+Subiteracion 4 : array1 1088 array2 1056
+Subiteracion 5 : array1 1104 array2 1072
+Subiteracion 6 : array1 1120 array2 1088
+Subiteracion 7 : array1 1136 array2 1104
+Subiteracion 8 : array1 1152 array2 1120
+Subiteracion 9 : array1 1168 array2 1136
+Subiteracion 10 : array1 1184 array2 1152
+Subiteracion 11 : array1 1200 array2 1168
+Subiteracion 12 : array1 1216 array2 1184
+Subiteracion 13 : array1 1232 array2 1200
+Subiteracion 14 : array1 1248 array2 1216
+Subiteracion 15 : array1 1264 array2 1232
+Subiteracion 16 : array1 1280 array2 1248
+Iteracion numero 3
+Subiteracion 0 : array1 1024 array2 1264
+Subiteracion 1 : array1 1040 array2 1280
+Subiteracion 2 : array1 1056 array2 1024
+Subiteracion 3 : array1 1072 array2 1040
+Subiteracion 4 : array1 1088 array2 1056
+Subiteracion 5 : array1 1104 array2 1072
+Subiteracion 6 : array1 1120 array2 1088
+Subiteracion 7 : array1 1136 array2 1104
+Subiteracion 8 : array1 1152 array2 1120
+Subiteracion 9 : array1 1168 array2 1136
+Subiteracion 10 : array1 1184 array2 1152
+Subiteracion 11 : array1 1200 array2 1168
+Subiteracion 12 : array1 1216 array2 1184
+Subiteracion 13 : array1 1232 array2 1200
+Subiteracion 14 : array1 1248 array2 1216
+Subiteracion 15 : array1 1264 array2 1232
+Subiteracion 16 : array1 1280 array2 1248
+Iteracion numero 4
+Subiteracion 0 : array1 1024 array2 1264
+Subiteracion 1 : array1 1040 array2 1280
+Subiteracion 2 : array1 1056 array2 1024
+Subiteracion 3 : array1 1072 array2 1040
+Subiteracion 4 : array1 1088 array2 1056
+Subiteracion 5 : array1 1104 array2 1072
+Subiteracion 6 : array1 1120 array2 1088
+Subiteracion 7 : array1 1136 array2 1104
+Subiteracion 8 : array1 1152 array2 1120
+Subiteracion 9 : array1 1168 array2 1136
+Subiteracion 10 : array1 1184 array2 1152
+Subiteracion 11 : array1 1200 array2 1168
+Subiteracion 12 : array1 1216 array2 1184
+Subiteracion 13 : array1 1232 array2 1200
+Subiteracion 14 : array1 1248 array2 1216
+Subiteracion 15 : array1 1264 array2 1232
+Subiteracion 16 : array1 1280 array2 1248
+Iteracion numero 5
+Subiteracion 0 : array1 1024 array2 1264
+Subiteracion 1 : array1 1040 array2 1280
+Subiteracion 2 : array1 1056 array2 1024
+Subiteracion 3 : array1 1072 array2 1040
+Subiteracion 4 : array1 1088 array2 1056
+Subiteracion 5 : array1 1104 array2 1072
+Subiteracion 6 : array1 1120 array2 1088
+Subiteracion 7 : array1 1136 array2 1104
+Subiteracion 8 : array1 1152 array2 1120
+Subiteracion 9 : array1 1168 array2 1136
+Subiteracion 10 : array1 1184 array2 1152
+Subiteracion 11 : array1 1200 array2 1168
+Subiteracion 12 : array1 1216 array2 1184
+Subiteracion 13 : array1 1232 array2 1200
+Subiteracion 14 : array1 1248 array2 1216
+Subiteracion 15 : array1 1264 array2 1232
+Subiteracion 16 : array1 1280 array2 1248
+Iteracion numero 6
+Subiteracion 0 : array1 1024 array2 1264
+Subiteracion 1 : array1 1040 array2 1280
+Subiteracion 2 : array1 1056 array2 1024
+Subiteracion 3 : array1 1072 array2 1040
+Subiteracion 4 : array1 1088 array2 1056
+Subiteracion 5 : array1 1104 array2 1072
+Subiteracion 6 : array1 1120 array2 1088
+Subiteracion 7 : array1 1136 array2 1104
+Subiteracion 8 : array1 1152 array2 1120
+Subiteracion 9 : array1 1168 array2 1136
+Subiteracion 10 : array1 1184 array2 1152
+Subiteracion 11 : array1 1200 array2 1168
+Subiteracion 12 : array1 1216 array2 1184
+Subiteracion 13 : array1 1232 array2 1200
+Subiteracion 14 : array1 1248 array2 1216
+Subiteracion 15 : array1 1264 array2 1232
+Subiteracion 16 : array1 1280 array2 1248
+Iteracion numero 7
+Subiteracion 0 : array1 1024 array2 1264
+Subiteracion 1 : array1 1040 array2 1280
+Subiteracion 2 : array1 1056 array2 1024
+Subiteracion 3 : array1 1072 array2 1040
+Subiteracion 4 : array1 1088 array2 1056
+Subiteracion 5 : array1 1104 array2 1072
+Subiteracion 6 : array1 1120 array2 1088
+Subiteracion 7 : array1 1136 array2 1104
+Subiteracion 8 : array1 1152 array2 1120
+Subiteracion 9 : array1 1168 array2 1136
+Subiteracion 10 : array1 1184 array2 1152
+Subiteracion 11 : array1 1200 array2 1168
+Subiteracion 12 : array1 1216 array2 1184
+Subiteracion 13 : array1 1232 array2 1200
+Subiteracion 14 : array1 1248 array2 1216
+Subiteracion 15 : array1 1264 array2 1232
+Subiteracion 16 : array1 1280 array2 1248
+Iteracion numero 8
+Subiteracion 0 : array1 1024 array2 1264
+Subiteracion 1 : array1 1040 array2 1280
+Subiteracion 2 : array1 1056 array2 1024
+Subiteracion 3 : array1 1072 array2 1040
+Subiteracion 4 : array1 1088 array2 1056
+Subiteracion 5 : array1 1104 array2 1072
+Subiteracion 6 : array1 1120 array2 1088
+Subiteracion 7 : array1 1136 array2 1104
+Subiteracion 8 : array1 1152 array2 1120
+Subiteracion 9 : array1 1168 array2 1136
+Subiteracion 10 : array1 1184 array2 1152
+Subiteracion 11 : array1 1200 array2 1168
+Subiteracion 12 : array1 1216 array2 1184
+Subiteracion 13 : array1 1232 array2 1200
+Subiteracion 14 : array1 1248 array2 1216
+Subiteracion 15 : array1 1264 array2 1232
+Subiteracion 16 : array1 1280 array2 1248
+Iteracion numero 9
+Subiteracion 0 : array1 1024 array2 1264
+Subiteracion 1 : array1 1040 array2 1280
+Subiteracion 2 : array1 1056 array2 1024
+Subiteracion 3 : array1 1072 array2 1040
+Subiteracion 4 : array1 1088 array2 1056
+Subiteracion 5 : array1 1104 array2 1072
+Subiteracion 6 : array1 1120 array2 1088
+Subiteracion 7 : array1 1136 array2 1104
+Subiteracion 8 : array1 1152 array2 1120
+Subiteracion 9 : array1 1168 array2 1136
+Subiteracion 10 : array1 1184 array2 1152
+Subiteracion 11 : array1 1200 array2 1168
+Subiteracion 12 : array1 1216 array2 1184
+Subiteracion 13 : array1 1232 array2 1200
+Subiteracion 14 : array1 1248 array2 1216
+Subiteracion 15 : array1 1264 array2 1232
+Subiteracion 16 : array1 1280 array2 1248
+Iteracion numero 10
+Subiteracion 0 : array1 1024 array2 1264
+Subiteracion 1 : array1 1040 array2 1280
+Subiteracion 2 : array1 1056 array2 1024
+Subiteracion 3 : array1 1072 array2 1040
+Subiteracion 4 : array1 1088 array2 1056
+Subiteracion 5 : array1 1104 array2 1072
+Subiteracion 6 : array1 1120 array2 1088
+Subiteracion 7 : array1 1136 array2 1104
+Subiteracion 8 : array1 1152 array2 1120
+Subiteracion 9 : array1 1168 array2 1136
+Subiteracion 10 : array1 1184 array2 1152
+Subiteracion 11 : array1 1200 array2 1168
+Subiteracion 12 : array1 1216 array2 1184
+Subiteracion 13 : array1 1232 array2 1200
+Subiteracion 14 : array1 1248 array2 1216
+Subiteracion 15 : array1 1264 array2 1232
+Subiteracion 16 : array1 1280 array2 1248
+Iteracion numero 11
+Subiteracion 0 : array1 1024 array2 1264
+Subiteracion 1 : array1 1040 array2 1280
+Subiteracion 2 : array1 1056 array2 1024
+Subiteracion 3 : array1 1072 array2 1040
+Subiteracion 4 : array1 1088 array2 1056
+Subiteracion 5 : array1 1104 array2 1072
+Subiteracion 6 : array1 1120 array2 1088
+Subiteracion 7 : array1 1136 array2 1104
+Subiteracion 8 : array1 1152 array2 1120
+Subiteracion 9 : array1 1168 array2 1136
+Subiteracion 10 : array1 1184 array2 1152
+Subiteracion 11 : array1 1200 array2 1168
+Subiteracion 12 : array1 1216 array2 1184
+Subiteracion 13 : array1 1232 array2 1200
+Subiteracion 14 : array1 1248 array2 1216
+Subiteracion 15 : array1 1264 array2 1232
+Subiteracion 16 : array1 1280 array2 1248
+Iteracion numero 12
+Subiteracion 0 : array1 1024 array2 1264
+Subiteracion 1 : array1 1040 array2 1280
+Subiteracion 2 : array1 1056 array2 1024
+Subiteracion 3 : array1 1072 array2 1040
+Subiteracion 4 : array1 1088 array2 1056
+Subiteracion 5 : array1 1104 array2 1072
+Subiteracion 6 : array1 1120 array2 1088
+Subiteracion 7 : array1 1136 array2 1104
+Subiteracion 8 : array1 1152 array2 1120
+Subiteracion 9 : array1 1168 array2 1136
+Subiteracion 10 : array1 1184 array2 1152
+Subiteracion 11 : array1 1200 array2 1168
+Subiteracion 12 : array1 1216 array2 1184
+Subiteracion 13 : array1 1232 array2 1200
+Subiteracion 14 : array1 1248 array2 1216
+Subiteracion 15 : array1 1264 array2 1232
+Subiteracion 16 : array1 1280 array2 1248
+Iteracion numero 13
+Subiteracion 0 : array1 1024 array2 1264
+Subiteracion 1 : array1 1040 array2 1280
+Subiteracion 2 : array1 1056 array2 1024
+Subiteracion 3 : array1 1072 array2 1040
+Subiteracion 4 : array1 1088 array2 1056
+Subiteracion 5 : array1 1104 array2 1072
+Subiteracion 6 : array1 1120 array2 1088
+Subiteracion 7 : array1 1136 array2 1104
+Subiteracion 8 : array1 1152 array2 1120
+Subiteracion 9 : array1 1168 array2 1136
+Subiteracion 10 : array1 1184 array2 1152
+Subiteracion 11 : array1 1200 array2 1168
+Subiteracion 12 : array1 1216 array2 1184
+Subiteracion 13 : array1 1232 array2 1200
+Subiteracion 14 : array1 1248 array2 1216
+Subiteracion 15 : array1 1264 array2 1232
+Subiteracion 16 : array1 1280 array2 1248
+Iteracion numero 14
+Subiteracion 0 : array1 1024 array2 1264
+Subiteracion 1 : array1 1040 array2 1280
+Subiteracion 2 : array1 1056 array2 1024
+Subiteracion 3 : array1 1072 array2 1040
+Subiteracion 4 : array1 1088 array2 1056
+Subiteracion 5 : array1 1104 array2 1072
+Subiteracion 6 : array1 1120 array2 1088
+Subiteracion 7 : array1 1136 array2 1104
+Subiteracion 8 : array1 1152 array2 1120
+Subiteracion 9 : array1 1168 array2 1136
+Subiteracion 10 : array1 1184 array2 1152
+Subiteracion 11 : array1 1200 array2 1168
+Subiteracion 12 : array1 1216 array2 1184
+Subiteracion 13 : array1 1232 array2 1200
+Subiteracion 14 : array1 1248 array2 1216
+Subiteracion 15 : array1 1264 array2 1232
+Subiteracion 16 : array1 1280 array2 1248
+Iteracion numero 15
+Subiteracion 0 : array1 1024 array2 1264
+Subiteracion 1 : array1 1040 array2 1280
+Subiteracion 2 : array1 1056 array2 1024
+Subiteracion 3 : array1 1072 array2 1040
+Subiteracion 4 : array1 1088 array2 1056
+Subiteracion 5 : array1 1104 array2 1072
+Subiteracion 6 : array1 1120 array2 1088
+Subiteracion 7 : array1 1136 array2 1104
+Subiteracion 8 : array1 1152 array2 1120
+Subiteracion 9 : array1 1168 array2 1136
+Subiteracion 10 : array1 1184 array2 1152
+Subiteracion 11 : array1 1200 array2 1168
+Subiteracion 12 : array1 1216 array2 1184
+Subiteracion 13 : array1 1232 array2 1200
+Subiteracion 14 : array1 1248 array2 1216
+Subiteracion 15 : array1 1264 array2 1232
+Subiteracion 16 : array1 1280 array2 1248
+Iteracion numero 16
+Subiteracion 0 : array1 1024 array2 1264
+Subiteracion 1 : array1 1040 array2 1280
+Subiteracion 2 : array1 1056 array2 1024
+Subiteracion 3 : array1 1072 array2 1040
+Subiteracion 4 : array1 1088 array2 1056
+Subiteracion 5 : array1 1104 array2 1072
+Subiteracion 6 : array1 1120 array2 1088
+Subiteracion 7 : array1 1136 array2 1104
+Subiteracion 8 : array1 1152 array2 1120
+Subiteracion 9 : array1 1168 array2 1136
+Subiteracion 10 : array1 1184 array2 1152
+Subiteracion 11 : array1 1200 array2 1168
+Subiteracion 12 : array1 1216 array2 1184
+Subiteracion 13 : array1 1232 array2 1200
+Subiteracion 14 : array1 1248 array2 1216
+Subiteracion 15 : array1 1264 array2 1232
+Subiteracion 16 : array1 1280 array2 1248
+Iteracion numero 17
+Subiteracion 0 : array1 1024 array2 1264
+Subiteracion 1 : array1 1040 array2 1280
+Subiteracion 2 : array1 1056 array2 1024
+Subiteracion 3 : array1 1072 array2 1040
+Subiteracion 4 : array1 1088 array2 1056
+Subiteracion 5 : array1 1104 array2 1072
+Subiteracion 6 : array1 1120 array2 1088
+Subiteracion 7 : array1 1136 array2 1104
+Subiteracion 8 : array1 1152 array2 1120
+Subiteracion 9 : array1 1168 array2 1136
+Subiteracion 10 : array1 1184 array2 1152
+Subiteracion 11 : array1 1200 array2 1168
+Subiteracion 12 : array1 1216 array2 1184
+Subiteracion 13 : array1 1232 array2 1200
+Subiteracion 14 : array1 1248 array2 1216
+Subiteracion 15 : array1 1264 array2 1232
+Subiteracion 16 : array1 1280 array2 1248
+Iteracion numero 18
+Subiteracion 0 : array1 1024 array2 1264
+Subiteracion 1 : array1 1040 array2 1280
+Subiteracion 2 : array1 1056 array2 1024
+Subiteracion 3 : array1 1072 array2 1040
+Subiteracion 4 : array1 1088 array2 1056
+Subiteracion 5 : array1 1104 array2 1072
+Subiteracion 6 : array1 1120 array2 1088
+Subiteracion 7 : array1 1136 array2 1104
+Subiteracion 8 : array1 1152 array2 1120
+Subiteracion 9 : array1 1168 array2 1136
+Subiteracion 10 : array1 1184 array2 1152
+Subiteracion 11 : array1 1200 array2 1168
+Subiteracion 12 : array1 1216 array2 1184
+Subiteracion 13 : array1 1232 array2 1200
+Subiteracion 14 : array1 1248 array2 1216
+Subiteracion 15 : array1 1264 array2 1232
+Subiteracion 16 : array1 1280 array2 1248
+Iteracion numero 19
+Subiteracion 0 : array1 1024 array2 1264
+Subiteracion 1 : array1 1040 array2 1280
+Subiteracion 2 : array1 1056 array2 1024
+Subiteracion 3 : array1 1072 array2 1040
+Subiteracion 4 : array1 1088 array2 1056
+Subiteracion 5 : array1 1104 array2 1072
+Subiteracion 6 : array1 1120 array2 1088
+Subiteracion 7 : array1 1136 array2 1104
+Subiteracion 8 : array1 1152 array2 1120
+Subiteracion 9 : array1 1168 array2 1136
+Subiteracion 10 : array1 1184 array2 1152
+Subiteracion 11 : array1 1200 array2 1168
+Subiteracion 12 : array1 1216 array2 1184
+Subiteracion 13 : array1 1232 array2 1200
+Subiteracion 14 : array1 1248 array2 1216
+Subiteracion 15 : array1 1264 array2 1232
+Subiteracion 16 : array1 1280 array2 1248
+Iteracion numero 20
+Subiteracion 0 : array1 1024 array2 1264
+Subiteracion 1 : array1 1040 array2 1280
+Subiteracion 2 : array1 1056 array2 1024
+Subiteracion 3 : array1 1072 array2 1040
+Subiteracion 4 : array1 1088 array2 1056
+Subiteracion 5 : array1 1104 array2 1072
+Subiteracion 6 : array1 1120 array2 1088
+Subiteracion 7 : array1 1136 array2 1104
+Subiteracion 8 : array1 1152 array2 1120
+Subiteracion 9 : array1 1168 array2 1136
+Subiteracion 10 : array1 1184 array2 1152
+Subiteracion 11 : array1 1200 array2 1168
+Subiteracion 12 : array1 1216 array2 1184
+Subiteracion 13 : array1 1232 array2 1200
+Subiteracion 14 : array1 1248 array2 1216
+Subiteracion 15 : array1 1264 array2 1232
+Subiteracion 16 : array1 1280 array2 1248
+Ejecutando valgrind para medir los fallos de cache
+--16399-- warning: L3 cache found, using its data for the LL simulation.
+148.386688
+Ejecutando valgrind para medir los fallos de cache de las traspuestas
+--16431-- warning: L3 cache found, using its data for the LL simulation.
+40.787956
+Ejecutando valgrind para medir los fallos de cache
+--16450-- warning: L3 cache found, using its data for the LL simulation.
+83.654800
+Ejecutando valgrind para medir los fallos de cache de las traspuestas
+--16499-- warning: L3 cache found, using its data for the LL simulation.
+44.337166
+Ejecutando valgrind para medir los fallos de cache
+--16519-- warning: L3 cache found, using its data for the LL simulation.
+88.416275
+Ejecutando valgrind para medir los fallos de cache de las traspuestas
+--16530-- warning: L3 cache found, using its data for the LL simulation.
+52.860020
+Ejecutando valgrind para medir los fallos de cache
+--16549-- warning: L3 cache found, using its data for the LL simulation.
+91.630585
+Ejecutando valgrind para medir los fallos de cache de las traspuestas
+--16595-- warning: L3 cache found, using its data for the LL simulation.
+55.674629
+Ejecutando valgrind para medir los fallos de cache
+--16618-- warning: L3 cache found, using its data for the LL simulation.
+98.198105
+Ejecutando valgrind para medir los fallos de cache de las traspuestas
+--16630-- warning: L3 cache found, using its data for the LL simulation.
+57.284885
+Ejecutando valgrind para medir los fallos de cache
+--16650-- warning: L3 cache found, using its data for the LL simulation.
+100.230766
+Ejecutando valgrind para medir los fallos de cache de las traspuestas
+--16703-- warning: L3 cache found, using its data for the LL simulation.
+52.873459
+Ejecutando valgrind para medir los fallos de cache
+--16724-- warning: L3 cache found, using its data for the LL simulation.
+106.073196
+Ejecutando valgrind para medir los fallos de cache de las traspuestas
+--16738-- warning: L3 cache found, using its data for the LL simulation.
+55.303577
+Ejecutando valgrind para medir los fallos de cache
+--16759-- warning: L3 cache found, using its data for the LL simulation.
+108.622551
+Ejecutando valgrind para medir los fallos de cache de las traspuestas
+--16804-- warning: L3 cache found, using its data for the LL simulation.
+66.264694
+Ejecutando valgrind para medir los fallos de cache
+--16830-- warning: L3 cache found, using its data for the LL simulation.
+127.707283
+Ejecutando valgrind para medir los fallos de cache de las traspuestas
+--16880-- warning: L3 cache found, using its data for the LL simulation.
+59.932835
+Ejecutando valgrind para medir los fallos de cache
+--16904-- warning: L3 cache found, using its data for the LL simulation.
+117.851761
+Ejecutando valgrind para medir los fallos de cache de las traspuestas
+--16917-- warning: L3 cache found, using its data for the LL simulation.
+72.217468
+Ejecutando valgrind para medir los fallos de cache
+--16939-- warning: L3 cache found, using its data for the LL simulation.
+127.936493
+Ejecutando valgrind para medir los fallos de cache de las traspuestas
+--16990-- warning: L3 cache found, using its data for the LL simulation.
+74.893028
+Ejecutando valgrind para medir los fallos de cache
+--17013-- warning: L3 cache found, using its data for the LL simulation.
+130.225159
+Ejecutando valgrind para medir los fallos de cache de las traspuestas
+--17030-- warning: L3 cache found, using its data for the LL simulation.
+68.500465
+Ejecutando valgrind para medir los fallos de cache
+--17090-- warning: L3 cache found, using its data for the LL simulation.
+138.132385
+Ejecutando valgrind para medir los fallos de cache de las traspuestas
+--17104-- warning: L3 cache found, using its data for the LL simulation.
+80.291374
+Ejecutando valgrind para medir los fallos de cache
+--17126-- warning: L3 cache found, using its data for the LL simulation.
+139.166611
+Ejecutando valgrind para medir los fallos de cache de las traspuestas
+--17181-- warning: L3 cache found, using its data for the LL simulation.
+73.935707
+Ejecutando valgrind para medir los fallos de cache
+--17205-- warning: L3 cache found, using its data for the LL simulation.
+147.346481
+Ejecutando valgrind para medir los fallos de cache de las traspuestas
+--17256-- warning: L3 cache found, using its data for the LL simulation.
+87.831039
+Ejecutando valgrind para medir los fallos de cache
+--17283-- warning: L3 cache found, using its data for the LL simulation.
+150.409851
+Ejecutando valgrind para medir los fallos de cache de las traspuestas
+--17297-- warning: L3 cache found, using its data for the LL simulation.
+91.837067
+Ejecutando valgrind para medir los fallos de cache
+--17362-- warning: L3 cache found, using its data for the LL simulation.
+222.337296
+Ejecutando valgrind para medir los fallos de cache de las traspuestas
+--17423-- warning: L3 cache found, using its data for the LL simulation.
+87.714645
+
+
+-----------------------------Ejecucion terminada juan
+
+
