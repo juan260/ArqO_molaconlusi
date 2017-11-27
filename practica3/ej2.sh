@@ -12,8 +12,8 @@ NTamanios=4
 declare -A slowTime
 declare -A fastTime
 
-# borrar el fichero DAT y el fichero PNG
-rm -f *.dat
+# borrar los ficheros PNG
+rm -f fPNGlect fPNGescr
 
 
 array1=$(seq $Ninicio $Npaso $Nfinal)
