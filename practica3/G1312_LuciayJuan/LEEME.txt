@@ -1,0 +1,6 @@
+Contenido de G1312_LuciaYJuan: 
+* Directorio dat con todos los .dat que pide el enunciado
+* Directorio png con todas las gráficas que pide el enunciado.
+* Directorio scripts_y_codigo. Puede ejecutarse master.sh, que ejecutaría todos los ejercicios (creando en el mismo directorio los nuevos .dat y .png)
+* Codigo fuente del ej3 
+* Memoria memoria_P3.pdf
