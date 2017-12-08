@@ -50,4 +50,4 @@ replot
 quit
 END_GNUPLOT
 
-
+./acc.sh $fDat
