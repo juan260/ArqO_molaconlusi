@@ -10,7 +10,7 @@ int main(int argc, char **argv)
 {
 	float *A=NULL, *B=NULL;
 	long long k=0, tam;
-	int nthreads;
+	int nthreads, nthr;
 	struct timeval fin,ini;
 	float sum=0;
 	
@@ -30,11 +30,11 @@ int main(int argc, char **argv)
 		freeVector(B);
 		return -1;
 	}
+	omp_set_num_threads(nthreads);
 	
 	gettimeofday(&ini,NULL);
 	/* Bloque de computo */
 	sum = 0;
-	omp_set_num_threads(nthreads);
 	#pragma omp parallel for reduction(+:sum)
 	for(k=0;k<tam;k++)
 	{
