@@ -10,7 +10,7 @@ int main(int argc, char **argv)
 {
 	float *A=NULL, *B=NULL;
 	long long k=0, tam;
-	int nthreads, nthr;
+	int nthreads;
 	struct timeval fin,ini;
 	float sum=0;
 	
