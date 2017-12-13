@@ -1,4 +1,5 @@
 
+
 \documentclass{report}
 
 \usepackage{lmodern}
@@ -13,6 +14,7 @@
 \sectionfont{\LARGE}
 \newcommand\tab[1][0.6cm]{\hspace*{#1}}
 \newcommand\nl{\newline\tab}
+\renewcommand\labelenumi{\textbf{\arabic{enumi}}}
 \renewcommand\labelenumii{\theenumi.\arabic{enumii}.}
 \renewcommand\thesection{\arabic{section}.} %Para que las secciones no se nombren como chapter.section (0.1, 0.2 etc)
 \renewcommand\labelitemi{$\cdot$ }
@@ -63,13 +65,19 @@
 	\section{Programas básicos de OpenMP}
 	
 	\begin{center}
-		\includegraphics[width=6in]{imagenes_memoria/ej2.png}
+		\includegraphics[width=6in]{ej2.png}
 	\end{center}
 	
 	\begin{enumerate}
-		\item{\textbf{\tab ¿Se	pueden	lanzar	más	threads	que	cores	tenga	el	sistema?¿Tiene	sentido	hacerlo?}	\nl El programa nos permite lanzar tantos hilos como queramos dentro de cierto margen (32037 es el máximo que nos ha permitido lanzar), pero como no disponemos de \textit{hyperthreading}, no tendría sentido hacerlo ya que cada core no permitiría la ejecución de más de un thread a la vez.}
+		\item{\textbf{ ¿Se
+				pueden	lanzar	más	threads	que	cores	tenga	el	sistema?¿Tiene	sentido	hacerlo?}
+			\nl El programa nos permite lanzar tantos hilos como queramos dentro de cierto margen (32037 es el máximo que nos ha permitido lanzar), pero como no disponemos de 
+			\textit{hyperthreading}, no tendría sentido hacerlo ya 
+			que cada core no permitiría la ejecución de más de un 
+			thread a la vez.}
 		\item{\textbf { \tab ¿Cuántos	threads	debería	utilizar	en	los	ordenadores	del	laboratorio?	¿y	en	su	propio	equipo?	} \nl 
-			A la vista de la salida de \texttt{cpuinfo}, sabemos que el número idóneo de hilos es 4.\nl No disponemos de un ordenador personal.}
+			A la vista de la salida de \texttt{cpuinfo}, sabemos que el número idóneo de hilos es 4.\nl No disponemos de un ordenador personal,y encontramos de un elitismo más característicos del feudalismo que de la Edad Contemporánea la incorrecta presuposición de que disponemos de tal equipo.\nl
+			Era bromis, no hemos podido contenernos. Con \texttt{cpuinfo}, obtenemos que nuestro equipo consta de 4 cores reales y 8 virtuales, por lo cual el número ideal de threads a utilizar es 8. }
 		\item{\textbf {\tab ¿Cómo se comporta OpenMP	cuando	declaramos	una	variable	privada?		} \nl Las variables privadas declaradas como "private" apuntarán a una dirección de memoria cualquiera que tendrá valores residuales. Por otro lado si están declaradas como \texttt{firstprivate} tendrán el valor de incialización de la variable con el mismo nombre presente fuera de los threads. }
 		\item{\textbf {\tab ¿Qué ocurre	con	el valor de una variable privada al comenzar a	ejecutarse	la región paralela? } \nl Las variables delcadaras con \texttt{private} se deben inicializar en cada hilo, si no, ocurrirá como ocurre en la ejecución del programa, que tendrán valores indeterminados. En este caso tienen 0 o -1 porque apuntan a direcciones que contienen todo 0's o todo F's. Si se declara con \texttt{firstprivate} no hay este problema, ya que la variable queda con el valor de inicialización original.}
 		\item{\textbf {\tab ¿Qué	ocurre	con	el	valor	de	una	variable	privada	al	finalizar	la	región	paralela?		} \nl Como observamos, las direcciones de memoria de las variables privadas son distintas de las de las originales, tanto en el caso de las declaradas con "private" como en el de las declaradas con \texttt{firstprivate}. Por ello, su valor se pierde al terminar la ejecucion del thread.}
@@ -89,10 +97,10 @@
 		\textit{\nl \newline \textbf{Nota:} el enunciado indicaba que teníamos que usar vectores que tardaran em multiplicarse hasta 10 segundos. Las gráficas obtenidas no van a representar estos tiempos por lo siguiente: aunque la salida del programa nos daba tiempos de ejecución de apenas 2 segundos, añadiendo otro timeval para saber el tiempo total de ejecución, obteníamos ejecuciones de 20 segundos. Por tanto, aunque en la gráfica se reflejen tiempos bajos, los tiempos reales eran los que la práctica requería.}
 		
 		\begin{center}
-			\includegraphics[width=6in]{imagenes_memoria/pescalar.png}
+			\includegraphics[width=6in]{pescalar.png}
 		\end{center}
 		\begin{center}
-			\includegraphics[width=6in]{imagenes_memoria/acc.png}
+			\includegraphics[width=6in]{acc.png}
 		\end{center}
 		
 		\item{\textbf{\tab En	términos	del	tamaño	de	los	vectores,	¿compensa	siempre	lanzar	hilos	para	realizar	el	trabajo	en	
@@ -110,20 +118,46 @@
 		}
 		\item{\textbf{\tab Valore	si	existe	algún	tamaño	del	vector	a	partir	del	cual	el	comportamiento	de	la	aceleración	va	a	
 				ser	muy	diferente	del	obtenido	en	la	gráfica.	}\nl
-			
+			Suponemos que para  tamaños pequeños de vectores, la aceleración obtenida crecerá de manera muy rápida, pero que existirá un tamaño a partir del cual la aceleración se estabilice, y lo que refleja nuestra gráfica es la aceleración ya estabilizada.
 		}
 	\end{enumerate}
 	\newpage
 	
 	
 	\section {Paralelizar la multiplicación de matrices}
+	
+	\tab La salida de nuestro programa, que rellenaba las tablas del eneunciado y las mostraba por pantalla y sobre el cual hablaremos más en detalle un poco mas adelante, además de las gráficas, ha generado la siguiente salida:\newline
+	\begin{center}
+		\includegraphics[width=6in]{TABLITA_1000.png}
+	\end{center}
+	
+	\begin{center}
+		\includegraphics[width=6in]{TABLITA_6000.png}
+	\end{center}
+	
 	\begin{enumerate}
 		\item{\textbf{\tab ¿Cuál	de	las	tres	versiones	obtiene	peor	rendimiento?	¿A	qué	se	debe?}\nl
-			La versión que ha obtenido peor rendimiento ha sido la de paralelización del bucle  con un único hilo. La razón de esto se halla en el hecho de que, por un lado, un hilo es el menor nivel de paralelización posible, por otro lado, el número de operaciones paralelizadas no es el suficiente para que salga rentable dicha paralelización en términos de eficiencia, y esto se ve potenciado por el hecho de que la paralelizacion se ejecuta en cada iteración del bucle superior.}
+			La versión que ha obtenido peor rendimiento ha sido la de paralelización del bucle  con un único hilo. La razón de esto se halla en el hecho de que, por un lado, un hilo es el menor nivel de paralelización posible, por otro lado, el número de operaciones paralelizadas no es el suficiente para que salga rentable dicha paralelización en términos de eficiencia, y esto se ve potenciado por el hecho de que la paralelizacion se ejecuta en cada iteración del bucle superior. Esto se aprecia con claridad en las salidas de los programas que tenemos más arriba, para matrices de tamaño 1000 y 6000}
+		
+		
 		
 		\item{\textbf{\tab ¿Cuál	de	las	tres	versiones	obtiene	mejor	rendimiento?	¿A	qué	se	debe?}\nl
 			Tiene mejor rendimiento la version en la que se paraleliza el bucle 3, es decir, el bucle exterior, con 4 hilos. Esto tiene sentido, ya que a más hilos, mientras el número de éstos no supere el número de cores de la máquina, mayor es la paralelización, y mayor es, por tanto, el rendimiento. En cuanto a que el bucle que tiene más sentido paralelizar sea el exterior se debe a que esta es la manera de paralelizar más operaciones. Por ejemplo, el bucle interior ejecuta menos operaciones por cada iteración que cualquiera de los otros.}
-		
+		\newpage
+		\item{\textbf{\tab Gráficas y comentarios}\nl
+			\newline \tab
+			Estas son las gráficas que ha generado nuestro programa. La primera es tiene el \textit{speedup} en el eje Y y el tamaño de la matriz en el eje de las X. La segunda tiene el tiempo de ejecución en el eje Y y el tamaño de la matriz en el eje X.\newline
+			\begin{center}
+				\includegraphics[width=6in]{ej3_speedup.png}
+			\end{center}
+			
+			\begin{center}
+				\includegraphics[width=6in]{ej3_time.png}
+			\end{center}
+			
+			\tab Para generar la gráfica hemos utilizado un script que incluimos en esta entrega llamado $ ej3.sh $, que primeramente rellenaba y mostraba las tablas del enunciado para matrices de tamaños \textit{1000x1000} y \textit{6000x6000}. Después generaba las gráficas para tamaños desde \textit{2056} hasta \textit{4014} aumentando de 64 en 64.\nl
+			Se aprecia e la gráfica que el crecimiento de tiempo con el aumento del tamaño de la matriz es exponencial, tal y como abría de esperar (ya que el número de resultados a obtener es el numero de elementos de la matriz, que va aumentando de forma cuadrática sobre el aumento del tamaño de la matriz) También vemos como una paralelización adecuada aumenta el rendimiento, en este caso, lo aumenta en un 59\% aproximadamente. En la gráfica de speedup, aunque aparentemente hay grandes irregularidades, basta con mirar la escala del eje Y para darse cuenta de que no es así realmente, casi todos los valores se mantienen en un intervalo muy pequeño, de tamaño 0,05 $(1,57 - 1,62)$.
+		}
 	\end{enumerate}
 	\newpage
 	\section{Ejemplo de integración numérica \newline Perdida de rendimiento por el efecto de falso compartir (False
@@ -140,13 +174,30 @@
 			A pesar de que en ambos programas la salida indica \texttt{resultado $\pi$: 3.141593}, el rendimiento es muy distinto. En \texttt{./pi\_par4 } tenemos tiempo 0.121272 y en \texttt{./pi\_par1} obtenemos  0.370529, que resulta tres veces más lento.\nl
 			La razón es que, en \texttt{pi\_par1.c}, por cada iteración del bucle los hilos actualizan diferentes posiciones del mismo array. Como cada procesador tiene su propia caché donde reside una copia del array, cada actualización de cualquier elemento del mismo debe propagarse hacia arriba, y luego llegar a las cachés distintos procesadores. En cambio, \texttt{pi\_par4.c} sólo escribe en el array una vez por cada hilo (en lugar de una vez por cada hilo e iteración), por lo cual la actualización del mismo no supone un problema en el rendimiento del programa.
 		}
-		\item {\textbf{\tab Ejecute las versiones paralelas 2 y 3 del programa. ¿Qué ocurre con el resultado y el rendimiento obtenido? ¿Ha ocurrido lo que se esperaba?}\nl
-		}
+		\item{\textbf{\tab Ejecute las versiones paralelas 2 y 3 del programa. ¿Qué ocurre con el resultado y el rendimiento obtenido? ¿Ha ocurrido lo que se esperaba?}\nl
+			Observamos que, por un lado, el resultado obtenido es el correcto de $\pi$ en ambos casos. Por otro lado, la version \texttt{pi\_par3.c} es alrededor de 0.8 segundos más rápida que la versiona \texttt{pi\_par2.c}.\nl
+			Esto es lo que cabría esperar, ya que la versión \texttt{pi\_par2.c} está simplemente cogiendo \textit{sum} como un puntero privado que apunta a la dirección original de \textit{sum},
+			de esta manera, todos los threads editan la misma variable \textit{sum}, pero siguen actualizando el mismo array, que sigue teniendo que acualizarse en todas las cachés, de ahí que el rendimiento sea similar al de \texttt{pi\_par1.c}, esencialmente, caen en el mismo uso mejorable de la caché. Sin embargo, la versión \texttt{pi\_par3.c} hace algo distinto: estudia el tamaño de la caché para llevar a cabo la técnica de "padding", consistente en mirar cuantos datos caben en la caché, cargarlos, y reutilizarlos todo lo posible, para cargar los siguientes despues. A pesar de ello, cada edición de la variable \textit{sum} sigue provocando que en las cachés de los otros cores se tenga que recargar \textit{sum} en cada uno de ellos por cada edición, por ello, aunque el rendimiento mejora, no llega a estar al nivel de \texttt{pi\_par4.c}}
 		\item {\textbf{\tab Abra el fichero pi\_par3.c y modifique la línea 32 del fichero para que tome los valores fijos 1, 2, 4, 6, 7, 8, 9, 10 y 12. Ejecute este programa para cada uno de estos valores. ¿Qué ocurre con el rendimiento que se observa?}\nl
+			Observamos que para \textit{padsz}=1 tenemos tiempos de ejecución similares a los de \texttt{pi\_par1.c}, y conforme vamos aumentando el valor, estos tiempos van disminuyendo hasta llegar a 8 (valor natural de la máquina, que es el que obtenía el programa antes de editarlo al ejecutarse), momento a partir del cual se estabilizan. Esto es ciertamente contraintuitivo y posiblemente debido a las características de la máquina en la que se ha ejecutado. Lo que ocurriría normalmente, sería una abrupta subida a partir del valor 8, debido a un desbordamiento de la caché que provocaría un aumento exponencial de los fallos de caché.
 		}
 		
 		
 	\end{enumerate}
-	
-	
+	\newpage
+	\section{Uso	de	la	directiva	 "critical"
+		y "reduction"}
+	\begin{enumerate}
+		\item {\textbf{\tab Ejecute	 las	 versiones	 4	 y	 5	 del	 programa.	 Explique	 el	 efecto	 de	 utilizar	 la	
+				directiva	critical.	¿Qué	diferencias	de	rendimiento	se	aprecian?	¿A	qué	se	debe	este	efecto?	}\nl
+			Podemos observar que la version 5 no solo es mucho más lenta que la version 4, sino que además el resultado es erróneo y no determinista, es decir, que con cada ejecución es uno distinto. La lentitud se debe a que cuando un thread llega a la instrucción \texttt{critical} detiene la ejecución de todos los demás threads, a diferencia de un semáforo, que simplemente impide que varias ejecuciones entren en la zona crítica a la vez, esto provoca que cada thread pase muchísimo tiempo parado y tome mucho mas tiempo la ejecución total. 
+		}
+		
+		\item{\textbf{\tab Ejecute	 las	 versiones	 6	 y	 7	 del	 programa.	 Explique	 el	 efecto	 de	 utilizar	 las	
+				directiva	 utilizadas.	 ¿Qué	 diferencias	 de	 rendimiento	 se	 aprecian?	 ¿A	 qué	 se	 debe	 este	
+				efecto?}\nl
+			
+			\tab Ambos resultados son correctos, aunque la versión 7 es notablemente más rápida que la versión 6, del orden de un 25\%, debido al hecho de que la versión 6 sigue cometiendo \textit{false sahring} con la variable \textit{sum}. La versión 7 soluciona este problema con el uso de \textit{reduction}. Cada hilo tiene su propia variable sum que utiliza por separado, y al final de la ejecución de los hilos, todas las variables \textit{sum} de éstos se suman para formar una sola.
+		}
+	\end{enumerate}
 \end{document}

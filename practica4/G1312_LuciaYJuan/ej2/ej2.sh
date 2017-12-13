@@ -9,6 +9,9 @@ fImg=pescalar.png
 
 array=($(seq $ini $paso $end))
 
+make clean
+make
+
 > $fDat
 #Esto cambia el formato float: de 1,23 a 1.23 para que la salida
 #de su programa sea considerada float
@@ -51,4 +54,4 @@ replot
 quit
 END_GNUPLOT
 
-./acc.sh $fDat
+./aceleracion.sh $fDat

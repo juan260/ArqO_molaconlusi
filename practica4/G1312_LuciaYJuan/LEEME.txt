@@ -1,0 +1,15 @@
+Autores: Lucia Asencio y Juan Riera
+Doble Grado en Ingeniería Informática y Matemáticas
+Tercer Curso
+Arquitectura de Computadores, práctica 4
+
+Contenido:
+-Imagenes memoria: son las imágenes y gráficas incluidas en la 
+memoria que han generado nuestros programas.
+
+-ej2: directorio que contiene el codigo referente al ejercicio2.
+
+-ej3: directorio que contiene el codigo referente al ejercicio3.
+
+-Memoria practica 4.pdf: memoria de la práctica con respuestas
+a las cuestiones del enunciado.
